@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_29_161126) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_30_101805) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,11 +20,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_161126) do
     t.string "species"
     t.string "temper"
     t.bigint "user_id", null: false
-    t.string "avatar"
     t.text "description"
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "toys", default: [], array: true
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 
@@ -41,7 +41,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_161126) do
     t.bigint "dog_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "second_dog_id"
     t.index ["dog_id"], name: "index_matches_on_dog_id"
+    t.index ["second_dog_id"], name: "index_matches_on_second_dog_id"
   end
 
   create_table "meetings", force: :cascade do |t|
@@ -50,8 +52,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_161126) do
     t.bigint "place_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "second_dog_id"
     t.index ["dog_id"], name: "index_meetings_on_dog_id"
     t.index ["place_id"], name: "index_meetings_on_place_id"
+    t.index ["second_dog_id"], name: "index_meetings_on_second_dog_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -65,7 +69,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_161126) do
   end
 
   create_table "places", force: :cascade do |t|
-    t.string "image"
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -78,6 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_161126) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rating"
     t.index ["place_id"], name: "index_reviews_on_place_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
@@ -93,7 +97,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_161126) do
     t.string "username"
     t.string "first_name"
     t.string "last_name"
-    t.string "avatar"
+    t.text "description"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -112,7 +116,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_161126) do
   add_foreign_key "likes", "dogs"
   add_foreign_key "likes", "users"
   add_foreign_key "matches", "dogs"
+  add_foreign_key "matches", "dogs", column: "second_dog_id"
   add_foreign_key "meetings", "dogs"
+  add_foreign_key "meetings", "dogs", column: "second_dog_id"
   add_foreign_key "meetings", "places"
   add_foreign_key "messages", "matches"
   add_foreign_key "messages", "users"
