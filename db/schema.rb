@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_30_103148) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_30_132919) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,7 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_103148) do
     t.bigint "dog_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "second_dog_id"
+    t.bigint "second_dog_id", null: false
     t.index ["dog_id"], name: "index_matches_on_dog_id"
     t.index ["second_dog_id"], name: "index_matches_on_second_dog_id"
   end
@@ -52,7 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_103148) do
     t.bigint "place_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "second_dog_id"
+    t.bigint "second_dog_id", null: false
     t.index ["dog_id"], name: "index_meetings_on_dog_id"
     t.index ["place_id"], name: "index_meetings_on_place_id"
     t.index ["second_dog_id"], name: "index_meetings_on_second_dog_id"
