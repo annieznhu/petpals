@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dogs/index'
   devise_for :users
 
   authenticated :user do
