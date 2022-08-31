@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+    <h1 class='title'><strong>Petpals</strong></h1>
+    <h2>Woof woof doggy, une application qui va changer la vie de votre chien! Yey on adore</h2>
+    <a class="btn" href="#">S'inscrire</a>
+</div>
+
+<div class='cards'>
+  <div class="card">
+  <%=image_tag('pink_dog.png') %>
+  <p>Rencontrez des chiens compatibles avec le votre</p>
+  </div>
+
+  <div class="card">
+  <%= image_tag('emoji-heart-eyes.png') %>
+  <p>Partagez votre amour pour votre animal</p>
+  </div>
+
+  <div class="card">
+  <%= image_tag('tree.png') %>
+  <p>Trouvez les meilleurs lieux de balades</p>
+  </div>
+
+  <div class="card">
+  <%= image_tag('people.png') %>
+  <p>Découvrez une communauté de passionnés</p>
+  </div>
+</div>
