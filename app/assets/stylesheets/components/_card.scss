@@ -2,6 +2,7 @@
   background-color: transparent;
   border: none;
   padding: 10px;
+  position: relative;
 
   h2 {
     font-family: "Fredoka One";
@@ -27,30 +28,29 @@
     width: 100%;
   }
 
-}
-
-#paw {
-  bottom: 309px;
-  color: $white;
-  font-size: 40px;
-  left: 263px;
-  position: relative;
-}
-
-.card-bottom {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 8px;
-
-  .card-left {
-    margin-left: 12px;
+  .paw {
+    color: $white;
+    font-size: 40px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
   }
 
-  .card-right {
-    margin-right: 12px;
-  }
+  .card-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 8px;
 
+    .card-left {
+      margin-left: 12px;
+    }
+
+    .card-right {
+      margin-right: 12px;
+    }
+
+  }
 }
 
 .cards {
