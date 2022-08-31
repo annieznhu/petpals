@@ -6,17 +6,19 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require "open-uri"
+
 puts "start seeding"
 
 puts "destroy old data"
 
+Review.destroy_all
+Meeting.destroy_all
+Place.destroy_all
+Like.destroy_all
+Match.destroy_all
 Dog.destroy_all
 User.destroy_all
-Place.destroy_all
-Review.destroy_all
-Match.destroy_all
-Like.destroy_all
-Meeting.destroy_all
 
 puts "old data destroyed"
 
@@ -105,8 +107,231 @@ meeting_2 = Meeting.create!(place: place_2, date: "2022-08-01", dog: dog_7, seco
 meeting_3 = Meeting.create!(place: place_2, date: "2022-08-08", dog: dog_7, second_dog: dog_19)
 meeting_4 = Meeting.create!(place: place_2, date: "2022-07-31", dog: dog_7, second_dog: dog_9)
 
+
+
+file = URI.open("https://images.unsplash.com/photo-1537204696486-967f1b7198c8")
+sleep 1
+file_2 = URI.open("https://images.unsplash.com/photo-1529831129093-0fa4866281ee")
+dog_1.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_1.photos.attach(io: file_2, filename: "dogo.png", content_type: "image/png")
+dog_1.save
+
+file = URI.open("https://images.unsplash.com/photo-1602241628512-459cdd3234fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
+file_2 = URI.open("https://images.unsplash.com/photo-1611250282006-4484dd3fba6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")
+dog_2.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_2.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_2.save
+
+file = URI.open("https://images.unsplash.com/photo-1581562324420-eff2f5aaa4b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80")
+file_2 = URI.open("https://images.unsplash.com/photo-1581562444215-837aae0e7e0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80")
+dog_3.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_3.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_3.save
+
+file = URI.open("https://images.unsplash.com/photo-1570314032164-6a08c8fa63d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
+file_2 = URI.open("https://images.unsplash.com/photo-1521309569781-7bcd429eb2f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
+dog_4.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_4.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_4.save
+
+file = URI.open("https://images.unsplash.com/photo-1621757298932-a68ecfdc8137?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
+file_2 = URI.open("https://images.unsplash.com/photo-1513904178077-6c5730ddd446?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YmxhY2slMjBwb29kbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60")
+dog_5.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_5.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_5.save
+
+file = URI.open("https://images.unsplash.com/photo-1568034097584-a3063e104ac3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80")
+file_2 = URI.open("https://images.unsplash.com/photo-1618809948931-30f2e1a2ee03?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGl0YnVsbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+dog_6.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_6.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_6.save
+
+file = URI.open("https://images.unsplash.com/photo-1611610436339-496cfcf1c51f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHNoaWJhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60")
+file_2 = URI.open("https://images.unsplash.com/photo-1610632215073-0914404ff012?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHNoaWJhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60")
+dog_7.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_7.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_7.save
+
+file = URI.open("https://images.unsplash.com/photo-1605725657590-b2cf0d31b1a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60")
+file_2 = URI.open("https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=767&q=80")
+dog_8.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_8.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_8.save
+
+file = URI.open("https://images.unsplash.com/photo-1526440847959-4e38e7f00b04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")
+file_2 = URI.open("https://images.unsplash.com/photo-1610389712622-73f621ff06bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60")
+dog_9.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_9.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_9.save
+
+file = URI.open("https://images.unsplash.com/photo-1608228028188-acdf9ebd3044?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")
+file_2 = URI.open("https://images.unsplash.com/photo-1607386176712-d8baeb6178a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")
+dog_10.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_10.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_10.save
+
+file = URI.open("https://images.unsplash.com/photo-1575535468632-345892291673?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
+file_2 = URI.open("https://images.unsplash.com/photo-1618173745201-8e3bf8978acc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80")
+dog_11.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_11.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_11.save
+
+file = URI.open("https://images.unsplash.com/photo-1629102902031-7490bf7a6d41?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80")
+file_2 = URI.open("https://images.unsplash.com/photo-1623052940978-051d2c0fb4be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80")
+dog_12.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_12.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_12.save
+
+file = URI.open("https://images.unsplash.com/photo-1626736637845-53045bb9695b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Z29sZGVuJTIwcmV0cmlldmVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60")
+file_2 = URI.open("https://images.unsplash.com/photo-1581285217236-a2355291f9c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGdvbGRlbiUyMHJldHJpZXZlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+dog_13.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_13.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_13.save
+
+file = URI.open("https://images.unsplash.com/photo-1521907554502-7440e4702fc3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YnVsbGRvZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+file_2 = URI.open("https://images.unsplash.com/photo-1521907236370-15adf2297445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60")
+dog_14.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_14.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_14.save
+
+file = URI.open("https://i.pinimg.com/564x/60/02/04/600204e0ff51fd4417d0e5a219a6db1a.jpg")
+file_2 = URI.open("https://i.pinimg.com/564x/41/c7/3a/41c73a41180ea2dd09da0c44656d18ce.jpg")
+dog_15.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_15.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_15.save
+
+file = URI.open("https://images.unsplash.com/photo-1548364758-83d6de049243?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGdlcm1hbiUyMHNoZXBoZXJkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60")
+file_2 = URI.open("https://images.unsplash.com/photo-1625321483581-e4b662b8abf1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fGdlcm1hbiUyMHNoZXBoZXJkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60")
+dog_16.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_16.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_16.save
+
+file = URI.open("https://images.unsplash.com/photo-1580553680518-54cc86c7f194?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")
+file_2 = URI.open("https://images.unsplash.com/photo-1585559700398-1385b3a8aeb6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
+dog_17.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_17.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_17.save
+
+file = URI.open("https://images.unsplash.com/photo-1617218326259-2a338a730d1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=705&q=80")
+file_2 = URI.open("https://images.unsplash.com/photo-1605639156481-244775d6f803?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGNoaWh1YWh1YXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+dog_18.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_18.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_18.save
+
+file = URI.open("https://images.unsplash.com/photo-1596207143439-9a9fab470a06?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHBvb2RsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+file_2 = URI.open("https://images.unsplash.com/photo-1596805827513-33a7b2523abf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHBvb2RsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+dog_19.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_19.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_19.save
+
+file = URI.open("https://images.unsplash.com/photo-1571868094976-6af3b50b43bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGl0YnVsbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+file_2 = URI.open("https://images.unsplash.com/photo-1550450888-a1ad510ccacc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGl0YnVsbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+dog_20.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_20.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
+dog_20.save
+
+file = URI.open("https://images.unsplash.com/photo-1531945086322-64e2ffae14a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFsZXx8fHx8fDE2NjE5NTU2NzY&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+user_1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_1.save
+
+file = URI.open("https://images.unsplash.com/photo-1468852677467-06a0f71c46f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFsZXx8fHx8fDE2NjE5NTU3MTQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+user_2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_2.save
+
+file = URI.open("https://images.unsplash.com/photo-1546578623-d1d3af878403?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d29tZW58fHx8fHwxNjYxOTU1OTgy&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+user_3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_3.save
+
+file = URI.open("https://images.unsplash.com/photo-1553404633-859669c11246?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d29tZW58fHx8fHwxNjYxOTU2MDA0&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+user_4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_4.save
+
+file = URI.open("https://images.unsplash.com/photo-1573878741117-1653384427db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d29tZW58fHx8fHwxNjYxOTU2MDE5&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+user_5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_5.save
+
+file = URI.open("https://images.unsplash.com/photo-1615125990475-b318176a49cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d29tZW58fHx8fHwxNjYxOTU2MDMy&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+user_6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_6.save
+
+file = URI.open("https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d29tZW58fHx8fHwxNjYxOTU2MDQz&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+user_7.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_7.save
+
+file = URI.open("https://images.unsplash.com/photo-1588731234159-8b9963143fca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFsZXx8fHx8fDE2NjE5NTU3MzU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+user_8.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_8.save
+
+file = URI.open("https://images.unsplash.com/photo-1455465341503-ed7916fb9cd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFsZXx8fHx8fDE2NjE5NTU3NTc&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+user_9.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_9.save
+
+file = URI.open("https://images.unsplash.com/photo-1636308600707-e19abecd6246?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d29tZW58fHx8fHwxNjYxOTU2MDY2&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+user_10.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_10.save
+
+file = URI.open("https://i0.wp.com/www.dailycal.org/assets/uploads/2019/03/michael_nbc_courtesy-copy.jpg?ssl=1")
+user_11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_11.save
+
+file = URI.open("https://figurinepop.com/public/2021/09/dwightschrute1_2.jpg")
+user_12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_12.save
+
+file = URI.open("https://lentrepreneur.co/wp-content/uploads/2022/03/Peacock-696x392.jpg")
+user_13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_13.save
+
+file = URI.open("https://images.unsplash.com/photo-1570751057973-1b84c959ff86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d29tZW58fHx8fHwxNjYxOTU2MTAw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+user_14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_14.save
+
+file = URI.open("https://images.unsplash.com/photo-1530047198515-516ff90fc4d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d29tZW58fHx8fHwxNjYxOTU2MTI0&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+user_15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_15.save
+
+file = URI.open("https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFsZXx8fHx8fDE2NjE5NTU3NzE&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+user_16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_16.save
+
+file = URI.open("https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFsZXx8fHx8fDE2NjE5NTU3OTk&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+user_17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_17.save
+
+file = URI.open("https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Angela-Martin.The-Office.webp")
+user_18.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_18.save
+
+file = URI.open("https://images.unsplash.com/photo-1564463836146-4e30522c2984?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d29tZW58fHx8fHwxNjYxOTU2MTM5&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+user_19.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_19.save
+
+file = URI.open("https://images.unsplash.com/photo-1494354145959-25cb82edf23d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d29tZW58fHx8fHwxNjYxOTU2MTY4&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+user_20.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_20.save
+
+file = URI.open("https://cloudfront-eu-central-1.images.arcpublishing.com/leparisien/GQ4C63XNMSPWEME2CP7IZFCLFI.jpg")
+place_1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+place_1.save
+
+file = URI.open("https://cdn.paris.fr/eqpts-prod/2022/05/10/821b66ef82d044341a38ecc77cd1ec33.jpg")
+place_2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+place_2.save
+
+file = URI.open("http://paris1900.lartnouveau.com/paris08/parc_monceau/accueil/1pmonc6.JPG")
+place_3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+place_3.save
+
+file = URI.open("https://offloadmedia.feverup.com/parissecret.com/wp-content/uploads/2018/03/19141411/shutterstock_1513396970-1-scaled.jpg")
+place_4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+place_4.save
+
+file = URI.open("https://www.unjourdeplusaparis.com/wp-content/uploads/2012/04/vue-vert-galant.jpg")
+place_5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+place_5.save
+
+file = URI.open("http://paris1900.lartnouveau.com/paris12/parc_de_bercy/accueil/1parc_berc55.jpg")
+place_6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+place_6.save
+
 puts "All done"
-
-
-
-

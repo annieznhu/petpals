@@ -10,6 +10,8 @@ class Dog < ApplicationRecord
 
   has_many :dog_meetings, class_name: 'Meeting', foreign_key: 'dog_id'
   has_many :second_dog_meetings, class_name: 'Meeting', foreign_key: 'second_dog_id'
+  
+  has_many_attached :photos
 
   def matches
     Match.where(id: dog_match_ids + second_dog_match_ids)
