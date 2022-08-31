@@ -1,0 +1,60 @@
+.card-dog {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  position: relative;
+
+  h2 {
+    font-family: "Fredoka One";
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+
+  h5 {
+    color: $dog-gray;
+    font-family: "Concert One";
+    font-size: 16px;
+    margin: 0px;
+  }
+
+  ul {
+    padding: 0px;
+  }
+
+  img {
+    aspect-ratio: 1 / 1;
+    border-radius: 15px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .paw {
+    color: $white;
+    font-size: 40px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+  }
+
+  .card-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 8px;
+
+    .card-left {
+      margin-left: 12px;
+    }
+
+    .card-right {
+      margin-right: 12px;
+    }
+
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 24px 0 24px;
+}
