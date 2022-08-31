@@ -1,11 +1,27 @@
-<div class="container">
-  <div class="search-bar">
-    <input type="text" placeholder="Lieu de recherche">
-  </div>
-
+<div class="search-bar">
+  <input type="text" placeholder="Lieu de recherche">
+</div>
+<div class="cards">
   <% @dogs.each do |dog| %>
-    <%= dog.name %>
-    <%= dog.age %>
-    <%= dog.temper %>
+    <div class="card-dog">
+      <div class="card-top">
+        <%= image_tag "dog.jpg" %> <%# ligne à retirer quand cloudinary up and running %>
+        <%=# link_to root_path do %> <%# ligne à décommenter lorsque 'like' sera implémenté %>
+          <i class="fa-solid fa-paw" id="paw"></i>
+        <%# end %>
+      </div>
+      <div class="card-bottom">
+        <div class="card-left">
+          <ul style="list-style: none;">
+            <li><h2><%= dog.name %></h2></li>
+            <li><h5><%= dog.age %> ans</h5></li>
+            <li><h5><%= dog.temper %></h5></li>
+          </ul>
+        </div>
+        <div class="card-right">
+          <h5><i class="fa-solid fa-location-dot" style="color: $dog-gray"></i> <%= dog.toys %></h5>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
