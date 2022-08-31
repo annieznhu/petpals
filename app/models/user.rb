@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :likes
   has_many :messages
   has_one :dog
+  has_one_attached :photo
 end
