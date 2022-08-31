@@ -1,1 +1,60 @@
 // Specific CSS for your home-page
+.banner {
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(dogs_visitor_home_page.jpg);
+  background-size: cover;
+  height: 50vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background-position: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 60px;
+
+  h1.title {
+    font-size: 80px;
+    font-family: 'Fredoka One';
+    opacity: 0.9;
+  }
+  .btn {
+    width: max-content;
+  }
+  h2 {
+    color: white;
+    text-align: center;
+    font-family: 'Dosis';
+  }
+}
+
+.title{
+  text-align: center;
+  color: white;
+}
+.btn {
+
+  color: white;
+  background-color: rgb(247, 182, 63);
+  border-radius: 12px;
+  border-color: rgb(247, 187, 76);
+  display: flex;
+  text-align: center;
+  width: 120px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  margin: 20px 60px 100px 50px;
+
+  .card {
+   align-items: center;
+   background-color: transparent;
+   border: none;
+   text-align: center;
+
+  img{
+    width: 50px;
+  }
+  }
+}
