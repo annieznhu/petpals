@@ -1,7 +1,11 @@
-<h1>Dogs#index</h1>
-<p>Find me in app/views/dogs/index.html.erb</p>
+<div class="container">
+  <div class="search-bar">
+    <input type="text" placeholder="Lieu de recherche">
+  </div>
 
-<% @dogs.each do |dog| %>
-  <%= dog.name %>
-  <%= dog.age %>
-<% end %>
+  <% @dogs.each do |dog| %>
+    <%= dog.name %>
+    <%= dog.age %>
+    <%= dog.temper %>
+  <% end %>
+</div>
