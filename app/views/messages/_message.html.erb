@@ -1,0 +1,21 @@
+<div class="bubble-message position-relative d-flex <%= message.user == current_user ? 'align-self-end message-current-user' : 'align-self-start message-other-user' %>" id="message-<%= message.id %>">
+  <div class="d-flex flex-column">
+    <small>
+      <strong><%= message.user.username %></strong>
+      <i><%= l(message.created_at, format: "%a %b %e à %l:%M") %></i>
+    </small>
+    <p><%= message.content %></p>
+  </div>
+  <%# <div class="position-absolute arrow-down"></div> %>
+</div>
+
+<%# <style>
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid blue;
+}
+</style> %>

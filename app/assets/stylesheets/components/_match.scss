@@ -1,0 +1,71 @@
+.match {
+  background: white;
+  margin-top: 9px;
+  height: calc(100vh - 75px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+
+  .head {
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid $gray-200;
+    align-items: center;
+  }
+
+
+
+  .avatar {
+
+    width: 50px;
+    height: 50px;
+    margin: 5px 10px 5px 0;
+    border-radius: 50%;
+    border-color: 1px solid black;
+  }
+
+  h1 {
+
+    margin-bottom: 0;
+    padding: 1rem;
+    align-self: flex-start;
+  }
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: scroll;
+    padding: 1rem;
+  }
+
+  #new_message {
+    border-top: 1px solid $gray-200;
+    border-bottom: 1px solid $gray-200;
+    padding: 1rem;
+
+    .form-group {
+      margin-bottom: 0;
+    }
+  }
+  .icon-calender {
+
+    color: #81b3bc;
+    font-size: 2rem;
+    margin: 16px 20px 30px 20px;
+  }
+
+  .icon {
+    border: none;
+    background: none;
+    color: #a8cdef;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+
+  }
+}
