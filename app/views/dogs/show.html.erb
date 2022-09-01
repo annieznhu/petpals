@@ -1,0 +1,40 @@
+<div class="container-dog">
+    <div class="banner-dog">
+    </div>
+    <div class="dog_infos">
+      <div>
+        <ul style='list-style: none; list-style-position: outside;'>
+          <li><h2><%= @dog.name %></h2></li>
+          <li><h5><%= pluralize(@dog.age, 'an')%></h5></li>
+          <li><h5><%= @dog.temper %></h5></li>
+        </ul>
+      </div>
+      <div>
+        <ul style='text-align: end; list-style: none;'>
+          <li><h6><%= @dog.species %></h6></li>
+          <%# <li><h6><%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [dog.latitude, dog.longitude]).round(1) %></h6></li> %>
+        </ul>
+      </div>
+    </div>
+    <div class='description'>
+      <h6><%= @dog.description %></h6>  
+    </div>
+    <div class='toys'>
+      <% @dog.toys.each do |toy| %>
+        <div class='bubble'>
+          <%= toy.downcase %>
+        </div>
+      <% end %>
+    </div>
+    <div class='like_swap'>
+        <%= link_to dogs_path do %>
+          <i class="fa-solid fa-chevron-left"></i>
+        <% end %>
+        <i class="fa-solid fa-paw" id='pawpaw'></i>
+        <%= link_to dogs_path do %>
+         <i class="fa-solid fa-chevron-right"></i>
+        <% end %>
+    </div>
+</div>
+
+

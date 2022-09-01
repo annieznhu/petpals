@@ -1,0 +1,76 @@
+
+
+
+.banner-dog {
+    background-image: url(dogs_visitor_home_page.jpg);
+    background-size: cover;
+    height: 40vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    background-position: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+ .dog_infos {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $dog-gray;
+    margin-left: 15px;
+    margin-right: 15px;
+    
+    h5 {
+        color: $dog-gray;
+    }
+    
+    h6 {
+        font-size: 15px;
+        color: $dog-gray;
+    }
+}
+
+.description {
+    padding-bottom: 10px;
+    margin: 20px;
+    border-bottom: 1px solid $dog-gray;
+
+    h6 {
+        font-family: $body-font;
+        color: $dog-gray;
+        font-weight: bold;
+        line-height: 2;
+    }
+}
+
+.toys {
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bubble {
+    border: 1px solid black;
+    border-radius: 50px;
+    padding: 9px
+}
+
+.like_swap {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center;
+
+    i {
+        color: $dog-gray;
+        font-size: 50px;
+        opacity: 0.3;
+    }
+}
+
+#pawpaw {
+    font-size: 85px;
+    color: #EFB05F;
+    opacity : 1;
+}

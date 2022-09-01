@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def home_user
+    @dogs = Dog.all.sample(6)
+  end
 end
