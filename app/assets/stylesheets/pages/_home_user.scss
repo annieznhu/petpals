@@ -1,0 +1,17 @@
+.dogs-cards {
+  display: grid;
+  grid-gap: 6px;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 24px 0 24px;
+
+  img {
+  aspect-ratio: 1 / 1;
+  border-radius: 15px;
+  object-fit: cover;
+  width: 50%;
+  }
+}
+
+.dog-card {
+  display: inline;
+}

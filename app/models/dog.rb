@@ -1,4 +1,7 @@
 class Dog < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   belongs_to :user
   validates :name, :age, :species, :temper, :address, :description, :toys, presence: true
 
@@ -10,7 +13,7 @@ class Dog < ApplicationRecord
 
   has_many :dog_meetings, class_name: 'Meeting', foreign_key: 'dog_id'
   has_many :second_dog_meetings, class_name: 'Meeting', foreign_key: 'second_dog_id'
-  
+
   has_many_attached :photos
 
   def matches
