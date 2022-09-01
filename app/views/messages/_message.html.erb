@@ -1,0 +1,7 @@
+<div id="message-<%= message.id %>">
+  <small>
+    <strong><%= message.user.username %></strong>
+    <i><%= l(message.created_at, format: "%a %b %e at %l:%M %p") %></i>
+  </small>
+  <p><%= message.content %></p>
+</div>
