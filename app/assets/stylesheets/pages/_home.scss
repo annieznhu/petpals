@@ -16,7 +16,7 @@
     font-family: 'Fredoka One';
     opacity: 0.9;
   }
-  .btn {
+  .button {
     width: max-content;
   }
   h2 {
@@ -30,15 +30,16 @@
   text-align: center;
   color: white;
 }
-.btn {
-
-  color: white;
+.button {
   background-color: rgb(247, 182, 63);
-  border-radius: 12px;
+  border-radius: 20px;
   border-color: rgb(247, 187, 76);
+  color: white;
   display: flex;
+  text-decoration: none;
   text-align: center;
   width: 120px;
+  padding: 20px;
 }
 
 .cards {
