@@ -1,6 +1,7 @@
 <%= render 'shared/search_bar' %>
-<div class='cards'>
+<div class='cards-dogs'>
   <% @dogs.each do |dog| %>
+    <% link_to %>
     <div class='card-dog'>
       <div class='card-top'>
 
@@ -43,7 +44,7 @@
         <div class='card-left'>
           <ul style='list-style: none;'>
             <li><h2><%= dog.name %></h2></li>
-            <li><h5><%= dog.age %> ans</h5></li>
+            <li><h5><%= pluralize( dog.age, 'an' ) %></h5></li>
             <li><h5><%= dog.temper %></h5></li>
           </ul>
         </div>
