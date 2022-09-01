@@ -10,8 +10,10 @@
   object-fit: cover;
   width: 50%;
   }
+
 }
 
 .dog-card {
-  display: inline;
+  display: flex;
+  overflow: hidden;
 }

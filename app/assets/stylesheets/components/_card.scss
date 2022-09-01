@@ -21,7 +21,12 @@
   padding: 10px;
   position: relative;
 
+  a {
+    text-decoration: none;
+  }
+
   h2 {
+    color: $dog-gray;
     font-family: "Fredoka One";
     font-size: 18px;
     margin-bottom: 2px;
