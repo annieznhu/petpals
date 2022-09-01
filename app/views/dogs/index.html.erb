@@ -36,14 +36,14 @@
       </div>
       <div class='card-bottom'>
         <div class='card-left'>
-          <ul style='list-style: none;'>
+          <ul style='list-style: none'>
             <li><h2><%= dog.name %></h2></li>
             <li><h5><%= pluralize( dog.age, 'an' ) %></h5></li>
             <li><h5><%= dog.temper %></h5></li>
           </ul>
         </div>
         <div class='card-right'>
-          <h5><i class='fa-solid fa-location-dot' style='color: $dog-gray'></i> <%= dog.address %></h5>
+          <h5><i class='fa-solid fa-location-dot' style='color: $dog-gray'></i> <%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [dog.latitude, dog.longitude]) %></h5>
         </div>
       </div>
     </div>
