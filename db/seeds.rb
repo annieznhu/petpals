@@ -47,26 +47,26 @@ user_20 = User.create!(first_name: 'Jeanne', last_name: 'Marc', email: 'brulee@v
 
 puts "create! dogs"
 
-dog_1 = Dog.create!(user: user_1 ,name: 'Medor', age: '3', species: 'Labrador', temper: 'Hyperactif', address: '5 Rue Fortuny, 75017 Paris', description: 'Beaucoup (trop) d’énergie à dépenser mais toujours bienveillant avec les enfants.', toys: ['Balle, Bâtons'])
-dog_2 = Dog.create!(user: user_2 ,name: 'Majax', age: '5', species: 'Golden Retriever', temper: 'Joueur', address: '52 Rue Saint-Lazare, 75009 Paris', description: 'Très gentil et affectueux, prudent avec les plus petit chien ', toys: ['Chaussures'])
-dog_3 = Dog.create!(user: user_3 ,name: 'Sirius', age: '9', species: 'Caniche', temper: 'Amical', address: '48 Bd de Vaugirard, 75015 Paris', description: 'Tout mimi pas très à l’aise avec les gros chien très dynamique', toys: ['Balles'])
-dog_4 = Dog.create!(user: user_4 ,name: 'Izy', age: '7', species: 'Bulldog', temper: 'Paresseux', address: '9 Rue Jules Romains, 75019 Paris', description: 'Gros lard, pas très virulent mais très câlin ', toys: ['Chaussures'])
-dog_5 = Dog.create!(user: user_5 ,name: 'Groupi', age: '1', species: 'Caniche', temper: 'Hyperactif', address: '2 Rue Saint-Lazare, 75009 Paris', description: 'Heureusement qu’il a des petites jambes, sinon je ne pourrais pas le suivre !!', toys: ['Bâtons'])
-dog_6 = Dog.create!(user: user_6 ,name: 'Pipou', age: '1', species: 'Pitbull', temper: 'Indépendant', address: '57 Rue du Simplon, 75018 Paris', description: 'Très curieux, mieux vaut me garder en laisse haha', toys: ['Bâtons'])
-dog_7 = Dog.create!(user: user_7 ,name: 'Tofu', age: '2', species: 'Shiba Inu', temper: 'Amical', address: '30 Rue las Cases, 75007 Paris', description: 'Un mec super sympa plein de vie et qui adore manger ce qui traîne par terre', toys: ['Balle'])
-dog_8 = Dog.create!(user: user_8 ,name: 'Lucky', age: '1', species: 'Berger Allemand', temper: 'Joueur', address: '12 Rue de Malte, 75011 Paris', description: 'Gros gourmand et grand sportif ! j’adore faire courir mes maîtres !', toys: ['Bâtons'])
-dog_9 = Dog.create!(user: user_9 ,name: 'Aria', age: '9', species: 'Yorkshire', temper: 'Amical', address: '3 Rue Frédéric Loliée, 75020 Paris', description: 'Petite princesse, je n’ai aucun mal à approcher mes semblables', toys: ['Bâtons'])
-dog_10 = Dog.create!(user: user_10, name: 'Stormy', age: '12', species: 'Chihuahua', temper: 'Paresseux', address: "30 Rue d'Auteuil, 75016 Paris", description: 'Passe plus de temps dans mes bras plutôt que de marcher par terre !', toys: ['Chaussures, Balles'])
-dog_11 = Dog.create!(user: user_11, name: 'Souna', age: '3', species: 'Shiba Inu', temper: 'Hyperactif', address: '8 Rue Bénouville, 75016 Paris', description: 'Je sais courir, faire de la moto, du vélo, surfer, il ne me reste plus qu’à apprendre à voler !', toys: ['Balle'])
-dog_12 = Dog.create!(user: user_12, name: 'Tellio', age: '4', species: 'Labrador', temper: 'Joueur', address: '19 Rue Vincent Compoint, 75018 Paris', description: 'Dresser par les meilleurs, c’est donc le meilleur.', toys: ['Bâtons'])
-dog_13 = Dog.create!(user: user_13, name: 'Tsouky', age: '3', species: 'Golden Retriever', temper: 'Indépendant', address: '9 Rue Versigny, 75018 Paris', description: 'Un expert pour trouver des truffes ! Dommage qu’il les mangent toutes..', toys: ['Balle, Bâtons'])
-dog_14 = Dog.create!(user: user_14, name: 'Papi', age: '11', species: 'Bulldog', temper: 'Possessif', address: '22 Rue du Roule, 75001 Paris', description: 'Un vieux pépère un peu jaloux mais tellement gentil.', toys: ['Chaussures, Balles'])
-dog_15 = Dog.create!(user: user_15, name: 'Maurice', age: '8', species: 'Yorkshire', temper: 'Agressif', address: '33 Rue de la Lune, 75002 Paris', description: 'Un caractère bien trempé comme sa maitresse.', toys: ['Bâtons'])
-dog_16 = Dog.create!(user: user_16, name: 'Rex', age: '7', species: 'Berger Allemand', temper: 'Indépendant', address: '81bis Rue de la Fontaine au Roi, 75011 Paris', description: 'Une boule de muscle, fort comme un lion, rapide comme un guépard, la vue d’un faucon et l’endurance d’un éléphant. mais nage comme une enclume', toys: ['Bâtons'])
-dog_17 = Dog.create!(user: user_17, name: 'Marvin', age: '5', species: 'Labrador', temper: 'Agressif', address: '19 Rue de la Solidarité, 75019 Paris', description: 'J’habite actuellement chez mon chien. C’est lui le chef de famille.', toys: ['Chaussures, Balles'])
+dog_1 = Dog.create!(user: user_1 ,name: 'Medor', age: '3', species: 'Labrador', temper: 'Hyperactif', address: '5 Rue Fortuny, 75017 Paris', description: 'Beaucoup (trop) d’énergie à dépenser mais toujours bienveillant avec les enfants.', toys: ['Balle', 'Bâtons'])
+dog_2 = Dog.create!(user: user_2 ,name: 'Majax', age: '5', species: 'Golden Retriever', temper: 'Joueur', address: '52 Rue Saint-Lazare, 75009 Paris', description: 'Très gentil et affectueux, prudent avec les plus petit chien. Récemment débarqué dans le quartier, à la recherche de nouveaux copains à me faire dans les alentours ! ', toys: ['Chaussures', 'boomrang'])
+dog_3 = Dog.create!(user: user_3 ,name: 'Sirius', age: '9', species: 'Caniche', temper: 'Amical', address: '48 Bd de Vaugirard, 75015 Paris', description: 'Tout mimi pas très à l’aise avec les gros chien très dynamique', toys: ['Balles', 'feuille'])
+dog_4 = Dog.create!(user: user_4 ,name: 'Izy', age: '7', species: 'Bulldog', temper: 'Paresseux', address: '9 Rue Jules Romains, 75019 Paris', description: 'Gros lard, pas très virulent mais très câlin ', toys: ['Chaussures', 'papillon'])
+dog_5 = Dog.create!(user: user_5 ,name: 'Groupi', age: '1', species: 'Caniche', temper: 'Hyperactif', address: '2 Rue Saint-Lazare, 75009 Paris', description: 'Heureusement qu’il a des petites jambes, sinon je ne pourrais pas le suivre !!', toys: ['Bâtons', 'pigeon'])
+dog_6 = Dog.create!(user: user_6 ,name: 'Pipou', age: '1', species: 'Pitbull', temper: 'Indépendant', address: '57 Rue du Simplon, 75018 Paris', description: 'Très curieux, mieux vaut me garder en laisse haha', toys: ['Bâtons', 'short'])
+dog_7 = Dog.create!(user: user_7 ,name: 'Tofu', age: '2', species: 'Shiba Inu', temper: 'Amical', address: '30 Rue las Cases, 75007 Paris', description: 'Un mec super sympa plein de vie et qui adore manger ce qui traîne par terre', toys: ['Balle', 'chats'])
+dog_8 = Dog.create!(user: user_8 ,name: 'Lucky', age: '1', species: 'Berger Allemand', temper: 'Joueur', address: '12 Rue de Malte, 75011 Paris', description: 'Gros gourmand et grand sportif ! j’adore faire courir mes maîtres !', toys: ['Bâtons', 'boomrang'])
+dog_9 = Dog.create!(user: user_9 ,name: 'Aria', age: '9', species: 'Yorkshire', temper: 'Amical', address: '3 Rue Frédéric Loliée, 75020 Paris', description: 'Petite princesse, je n’ai aucun mal à approcher mes semblables', toys: ['Bâtons', 'avion en papier'])
+dog_10 = Dog.create!(user: user_10, name: 'Stormy', age: '12', species: 'Chihuahua', temper: 'Paresseux', address: "30 Rue d'Auteuil, 75016 Paris", description: 'Passe plus de temps dans mes bras plutôt que de marcher par terre !', toys: ['Chaussures', 'Balles'])
+dog_11 = Dog.create!(user: user_11, name: 'Souna', age: '3', species: 'Shiba Inu', temper: 'Hyperactif', address: '8 Rue Bénouville, 75016 Paris', description: 'Je sais courir, faire de la moto, du vélo, surfer, il ne me reste plus qu’à apprendre à voler !', toys: ['Balle', 'sable'])
+dog_12 = Dog.create!(user: user_12, name: 'Tellio', age: '4', species: 'Labrador', temper: 'Joueur', address: '19 Rue Vincent Compoint, 75018 Paris', description: 'Dresser par les meilleurs, c’est donc le meilleur.', toys: ['Bâtons', 'spray poivré'])
+dog_13 = Dog.create!(user: user_13, name: 'Tsouky', age: '3', species: 'Golden Retriever', temper: 'Indépendant', address: '9 Rue Versigny, 75018 Paris', description: 'Un expert pour trouver des truffes ! Dommage qu’il les mangent toutes..', toys: ['Balle', 'Bâtons'])
+dog_14 = Dog.create!(user: user_14, name: 'Papi', age: '11', species: 'Bulldog', temper: 'Possessif', address: '22 Rue du Roule, 75001 Paris', description: 'Un vieux pépère un peu jaloux mais tellement gentil.', toys: ['Chaussures', 'Balles'])
+dog_15 = Dog.create!(user: user_15, name: 'Maurice', age: '8', species: 'Yorkshire', temper: 'Agressif', address: '33 Rue de la Lune, 75002 Paris', description: 'Un caractère bien trempé comme sa maitresse.', toys: ['Bâtons', "flaque d'eau"])
+dog_16 = Dog.create!(user: user_16, name: 'Rex', age: '7', species: 'Berger Allemand', temper: 'Indépendant', address: '81bis Rue de la Fontaine au Roi, 75011 Paris', description: 'Une boule de muscle, fort comme un lion, rapide comme un guépard, la vue d’un faucon et l’endurance d’un éléphant. mais nage comme une enclume', toys: ['Bâtons', 'haltères'])
+dog_17 = Dog.create!(user: user_17, name: 'Marvin', age: '5', species: 'Labrador', temper: 'Agressif', address: '19 Rue de la Solidarité, 75019 Paris', description: 'J’habite actuellement chez mon chien. C’est lui le chef de famille.', toys: ['Chaussures', 'Balles'])
 dog_18 = Dog.create!(user: user_18, name: 'Zoro', age: '3', species: 'Chihuahua', temper: 'Craintif', address: '12 Rue Buot, 75013 Paris', description: 'Zoro est un peu peureux, mais il adore découvir de nouveaux paysage !', toys: ['Balle, Bâtons'])
-dog_19 = Dog.create!(user: user_19, name: 'Benji', age: '6', species: 'Caniche', temper: 'Joueur', address: '36 Rue Eugène Oudiné, 75013 Paris', description: 'Maitrise les sorts de niveau 1 à 3, niveau 4 en défense contre les forces du mal, maitrise parfaitement le balai. Un peu de mal en potion', toys: ['Balle'])
-dog_20 = Dog.create!(user: user_20, name: 'Serge', age: '11', species: 'Pitbull', temper: 'Craintif', address: '5 Rue de Metz, 75010 Paris', description: ' Il adore les Hotdogs', toys: ['Bâtons'])
+dog_19 = Dog.create!(user: user_19, name: 'Benji', age: '6', species: 'Caniche', temper: 'Joueur', address: '36 Rue Eugène Oudiné, 75013 Paris', description: 'Maitrise les sorts de niveau 1 à 3, niveau 4 en défense contre les forces du mal, maitrise parfaitement le balai. Un peu de mal en potion', toys: ['Balle', 'baguette magique'])
+dog_20 = Dog.create!(user: user_20, name: 'Serge', age: '11', species: 'Pitbull', temper: 'Craintif', address: '5 Rue de Metz, 75010 Paris', description: ' Il adore les Hotdogs', toys: ['Bâtons', 'épée'])
 
 puts "create places"
 
@@ -88,11 +88,11 @@ reviews_6 = Review.create!(place: place_6, user: user_2, content: "Très beau, s
 
 puts "create matches"
 
-match_1 = Match.create!(dog: dog_12 , second_dog: dog_7)
-match_2 = Match.create!(dog: dog_4 , second_dog: dog_7)
-match_3 = Match.create!(dog: dog_11 , second_dog: dog_7)
-match_4 = Match.create!(dog: dog_19 , second_dog: dog_7)
-match_5 = Match.create!(dog: dog_9 , second_dog: dog_7)
+match_1 = Match.create!(dog: dog_12, second_dog: dog_7)
+match_2 = Match.create!(dog: dog_4, second_dog: dog_7)
+match_3 = Match.create!(dog: dog_11, second_dog: dog_7)
+match_4 = Match.create!(dog: dog_19, second_dog: dog_7)
+match_5 = Match.create!(dog: dog_9, second_dog: dog_7)
 
 puts "create likes"
 
@@ -110,7 +110,6 @@ meeting_4 = Meeting.create!(place: place_2, date: "2022-07-31", dog: dog_7, seco
 
 
 file = URI.open("https://images.unsplash.com/photo-1537204696486-967f1b7198c8")
-sleep 1
 file_2 = URI.open("https://images.unsplash.com/photo-1529831129093-0fa4866281ee")
 dog_1.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 dog_1.photos.attach(io: file_2, filename: "dogo.png", content_type: "image/png")
@@ -229,6 +228,8 @@ file_2 = URI.open("https://images.unsplash.com/photo-1550450888-a1ad510ccacc?ixl
 dog_20.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 dog_20.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
 dog_20.save
+
+puts "Almost done"
 
 file = URI.open("https://images.unsplash.com/photo-1531945086322-64e2ffae14a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFsZXx8fHx8fDE2NjE5NTU2NzY&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
 user_1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
