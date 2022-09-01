@@ -43,7 +43,9 @@
           </ul>
         </div>
         <div class='card-right'>
-          <h5><i class='fa-solid fa-location-dot' style='color: $dog-gray'></i> <%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [dog.latitude, dog.longitude]) %></h5>
+          <h5><i class='fa-solid fa-location-dot' style='color: $dog-gray'></i>
+          <%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [dog.latitude, dog.longitude]).round(1) %>
+          km d'ici</h5>
         </div>
       </div>
     </div>

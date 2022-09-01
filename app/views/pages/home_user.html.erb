@@ -1,12 +1,18 @@
-<div class="dog-cards">
+<h1>Bon retour parmi nous <%= current_user.first_name %>  👋</h1>
+<h2>Les profils recommandés</h2>
+<div class="dogs-cards">
   <% @dogs.each do |dog| %>
-    <div class="card-left">
-      <%#= cl_image_tag dog.photos.key, crop: :fill %>
-    </div>
-    <div class="card-right">
-      <%= dog.name %>
-      <%= dog.address %>
-      <%#= Geocoder::Calculations.distance_between(current_user.dog.lat, current_user.dog.lng, dog.lat, dog.lng) %>
+    <div class="dog-card">
+      <div class="card-left">
+        <%= cl_image_tag dog.photos.first.key, crop: :fill, class: 'dog-card' %>
+      </div>
+      <div class="card-right">
+        <span><strong><%= dog.name %></strong><span>
+        <span>
+        <%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [dog.latitude, dog.longitude]).round(1) %>
+        km d'ici</span>
+      </div>
     </div>
   <% end %>
 </div>
+<h2>Les balades du jour</h2>
