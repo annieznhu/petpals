@@ -7,6 +7,14 @@
   position: fixed;
 }
 
+.carousel-indicators [data-bs-target] {
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+
+
+}
+
 .card-dog {
   background-color: transparent;
   border: none;

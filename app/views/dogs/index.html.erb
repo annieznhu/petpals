@@ -3,9 +3,13 @@
   <% @dogs.each do |dog| %>
     <div class='card-dog'>
       <div class='card-top'>
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators<%= dog.id %>" class="carousel slide" data-bs-ride="false">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators<%= dog.id %>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators<%= dog.id %>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          </div>
           <div class="carousel-inner">
-            <% dog.photos.each_with_index do |photo, index| %>
+            <% dog.photos.each do |photo| %>
               <% if photo == dog.photos.first %>
                 <div class="carousel-item active">
                   <%= cl_image_tag photo.key, crop: :fill %>
@@ -17,16 +21,15 @@
               <%end%>
             <%end%>
           </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators<%= dog.id %>" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators<%= dog.id %>" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-         <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-         <span class="sr-only">Next</span>
-        </a>
-        <%#= image_tag dog.photos.first %> <%# ligne à retirer quand cloudinary up and running %>
         <%#= link_to like_path do %> <%# ligne à décommenter lorsque 'like' sera implémenté %>
           <i class='fa-solid fa-paw paw'></i>
         <%# end %>
