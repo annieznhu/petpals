@@ -2,21 +2,23 @@
     data-controller="match-subscription"
   data-match-subscription-match-id-value="<%= @match.id %>"
   >
-  <h1>C'est un match, discutons de <%= @match.dog.name %></h1>
+  <div class= "head">
+    <%= cl_image_tag @match.dog.photos.first.key, width: 100, height: 100, crop: :fill , class: "avatar"%>
+    <h1><%= @match.dog.name %></h1>
+  </div>
 
   <div class="messages" data-match-subscription-target="messages">
     <% @match.messages.each do |message| %>
       <%= render "messages/message", message: message %>
     <% end %>
   </div>
-  <%= simple_form_for [@match, @message],
-    html: { data: { action: "turbo:submit-end->match-subscription#resetForm" }, class: "d-flex" } do |f|
-  %>
-    <%= f.input :content,
-      label: false,
-      placeholder: "Dis quelque chose",
-      wrapper_html: {class: "flex-grow-1"}
-    %>
-    <%= f.submit "Envoyer", class: "btn btn-primary mb-3" %>
+  <%= simple_form_for [@match, @message], html: { data: { action: "turbo:submit-end->match-subscription#resetForm" }, class: "d-flex align-items-center" } do |f| %>
+    <%= link_to root_path, class: "icon-calender" do %>
+      <i class="fa-regular fa-calendar-plus"></i>
+    <% end %>
+    <%= f.input :content, label: false, placeholder: "Dis quelque chose", wrapper_html: {class: "flex-grow-1"} %>
+    <%= button_tag class: "icon" do %>
+      <i class="fa-regular fa-paper-plane"></i>
+    <% end %>
   <% end %>
 </div>

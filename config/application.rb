@@ -16,6 +16,7 @@ module Petpals
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    config.i18n.default_locale = :fr
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -24,5 +25,4 @@ module Petpals
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
   end
-  config.i18n.default_locale = :fr
 end

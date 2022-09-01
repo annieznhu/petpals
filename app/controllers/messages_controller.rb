@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
         @match,
         render_to_string(partial: "message", locals: { message: @message })
       )
-      head :ok
+       head :ok
     else
     end
   end
