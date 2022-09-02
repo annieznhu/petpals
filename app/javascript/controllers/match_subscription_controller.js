@@ -3,16 +3,17 @@ import { createConsumer } from "@rails/actioncable"
 
 // Connects to data-controller="match-subscription"
 export default class extends Controller {
-  static values = { matchId: Number }
-  static targets = ["messages"]
+  static values = { matchId: Number, userId: Number }
+  static targets = ["messages", "message"]
 
   connect() {
+    console.log(this.userIdValue)
     this.channel = createConsumer().subscriptions.create(
       { channel: "MatchChannel", id: this.matchIdValue },
       { received: data => this.#insertMessageAndScrollDown(data)}
     )
-    console.log(`Subscribed to the match with the id ${this.matchIdValue}.`)
   }
+
   resetForm(event) {
     event.target.reset()
   }
@@ -23,7 +24,19 @@ export default class extends Controller {
   }
 
   #insertMessageAndScrollDown(data) {
-    this.messagesTarget.insertAdjacentHTML("beforeend", data)
+    if (this.userIdValue === data.user_id) {
+      console.log('my message')
+      this.messagesTarget.insertAdjacentHTML("beforeend", data.html)
+    } else {
+      console.log('other message')
+      this.messagesTarget.insertAdjacentHTML("beforeend", data.html)
+      const lastMessage = this.messageTargets.slice(-1)[0]
+
+      lastMessage.classList.add('message-current-user')
+      lastMessage.classList.remove('message-other-user')
+      console.log(lastMessage)
+    }
+
     this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
   }
 }

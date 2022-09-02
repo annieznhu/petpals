@@ -81,8 +81,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-<<<<<<< HEAD
+
 
 gem "geocoder"
-=======
->>>>>>> a4ffff1 ( chatroom, match faite mais petit soucis de current user)
