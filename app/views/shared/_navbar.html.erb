@@ -1,13 +1,13 @@
 <div class="navbar fixed-bottom">
-  <%= link_to "#", class: "navbar-item #{ 'active' if current_page?(user_root_path) }" do %>
+  <%= link_to dogs_path, class: "navbar-item #{ 'active' if current_page?(dogs_path) }" do %>
     <i class="fa-solid fa-magnifying-glass"></i>
     <p>Explorer</p>
   <% end %>
-  <%= link_to places_path, class: "navbar-item" do %>
+  <%= link_to "#", class: "navbar-item" do %>
     <i class="fa-solid fa-map-location-dot"></i>
     <p>Carte</p>
   <% end %>
-  <%= link_to matches_path, class: "navbar-item" do %>
+  <%= link_to matches_path, class: "navbar-item #{ 'active' if current_page?(matches_path) }" do %>
     <i class="fa-solid fa-comment-dots"></i>
     <p>Messages</p>
   <% end %>

@@ -1,21 +1,22 @@
 <div class="container-dog">
-    <div class="banner-dog">
-      <%= cl_image_tag @dog.photos.first.key, crop: :fill %>
-    </div>
+  <div class="banner-dog">
+    <%= cl_image_tag @dog.photos.first.key, crop: :fill %>
+  </div>
+  <div id='all-infos'>
     <div class="dog_infos">
-      <div>
+      <div class='list'>
         <ul style='list-style: none; list-style-position: outside;'>
           <li><h2><%= @dog.name %></h2></li>
           <li><h5><%= pluralize(@dog.age, 'an')%></h5></li>
           <li><h5><%= @dog.temper %></h5></li>
         </ul>
       </div>
-      <div>
+      <div class='list'>
         <ul style='text-align: end; list-style: none;'>
           <li><h6><%= @dog.species %></h6></li>
           <li><h6>
             <%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [@dog.latitude, @dog.longitude]).round(1) %>
-           km d'ici</h6></li>
+            km d'ici</h6></li>
         </ul>
       </div>
     </div>
@@ -29,18 +30,16 @@
         </div>
       <% end %>
     </div>
-    <div class='like_swap'>
-
-        <%= link_to dog_path(@dog.id-1) do %>
-          <i class="fa-solid fa-chevron-left"></i>
-        <% end %>
-
-        <%= link_to dog_likes_path(@dog) do %>
-          <i class="fa-solid fa-paw" id='pawpaw'></i>
-        <% end %>
-
-        <%= link_to dog_path(@dog.id+1) do %>
-         <i class="fa-solid fa-chevron-right"></i>
-        <% end %>
-    </div>
+  </div>
+</div>
+<div class='like_swap'>
+  <%= link_to dog_path(@dog.id-1) do %>
+    <i class="fa-solid fa-chevron-left"></i>
+  <% end %>
+  <%= link_to dog_likes_path(@dog), data: {turbo_method: :post} do %>
+    <i class="fa-solid fa-paw" id='pawpaw'></i>
+  <% end %>
+  <%= link_to dog_path(@dog.id+1) do %>
+    <i class="fa-solid fa-chevron-right"></i>
+  <% end %>
 </div>
