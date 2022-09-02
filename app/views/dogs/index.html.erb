@@ -1,7 +1,6 @@
 <%= render 'shared/search_bar' %>
 <div class='cards-dogs'>
   <% @dogs.each do |dog| %>
-  <%= dog.id %>
     <%= link_to dog_path(dog) do %>
       <div class='card-dog'>
         <div class='card-top'>

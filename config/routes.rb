@@ -10,9 +10,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resource :profile, only: %i[edit update]
-  resource :dog, only: %i[edit update]
 
-  resources :dogs, only: %i[index show] do
+  resources :dogs, only: %i[index show edit update] do
     resources :likes, only: %i[create]
   end
 
