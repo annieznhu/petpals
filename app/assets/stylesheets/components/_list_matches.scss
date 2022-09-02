@@ -1,0 +1,40 @@
+h1 {
+  font-family: 'Concert One';
+  text-align: left;
+  padding: 20px;
+}
+.card-match {
+  border: none;
+  overflow: hidden;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 30px 40px 20px 30px;
+  justify-content: space-between;
+
+  .dog-image {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  .heart {
+    height: 60px;
+    width: 60px;
+
+  }
+}
+
+.title-index {
+  padding-top: 60px;
+  padding-bottom: 0px;
+  font-family: 'Concert One';
+  text-align: left;
+  margin-bottom: 0;
+}
+
+ .match-info {
+  align-items: center;
+  margin-left: 16px;
+ }
