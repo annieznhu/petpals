@@ -4,8 +4,13 @@
     data-match-subscription-user-id-value="<%= current_user.id %>">
 
   <div class= "head">
-    <%= cl_image_tag @match.dog.photos.first.key, width: 100, height: 100, crop: :fill , class: "avatar"%>
-    <h1><%= @match.dog.name %></h1>
+    <% if @match.dog == current_user.dog%>
+      <%= cl_image_tag @match.second_dog.photos.first.key, width: 100, height: 100, crop: :fill , class: "avatar"%>
+      <h1><%= @match.second_dog.name %></h1>
+    <% else %>
+      <%= cl_image_tag @match.dog.photos.first.key, width: 100, height: 100, crop: :fill , class: "avatar"%>
+      <h1><%= @match.dog.name %></h1>
+    <% end %>
   </div>
 
   <div class="messages" data-match-subscription-target="messages">

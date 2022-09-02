@@ -1,5 +1,9 @@
 .container-dog {
   overflow: scroll;
+  height: 80vh;
+  background-color: white;
+  padding-bottom: 10px;
+  position: relative;
 }
 
 ul {
@@ -13,6 +17,8 @@ ul {
     flex-direction: column;
     background-position: center;
     margin-bottom: 25px;
+    position: sticky;
+    top: 0;
 
     img {
       aspect-ratio: 1 / 1;
@@ -38,6 +44,10 @@ ul {
         font-size: 15px;
         color: $dog-gray;
     }
+    .list {
+        display:flex;
+        align-items: flex-end;
+    }
 }
 
 .description {
@@ -62,15 +72,19 @@ ul {
 .bubble {
     border: 1px solid black;
     border-radius: 50px;
-    padding: 9px
+    padding: 9px;
 }
 
 .like_swap {
+    background-color: white;
     display: flex;
     justify-content: space-around;
     padding-left: 30px;
     padding-right: 30px;
     align-items: center;
+    position: absolute;
+    bottom: 79px;
+    width: 100%;
 
     i {
         color: $dog-gray;
@@ -84,3 +98,7 @@ ul {
     color: #EFB05F;
     opacity : 1;
 }
+
+// #all_infos {
+//     height: 40vh;
+// }

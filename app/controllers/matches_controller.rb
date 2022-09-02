@@ -3,7 +3,7 @@ class MatchesController < ApplicationController
   end
 
   def show
-    @match = Match.find(params[:id])
+    @match = current_user.dog.matches.find(params[:id])
     @message = Message.new
   end
 end
