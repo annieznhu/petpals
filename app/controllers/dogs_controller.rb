@@ -2,7 +2,11 @@ class DogsController < ApplicationController
   before_action :set_dog, only: %i[show]
 
   def index
-    @dogs = Dog.all
+    if current_user.dog
+      @dogs = Dog.all.where.not(id: current_user.dog.id)
+    else
+      @dogs = Dog.all
+    end
   end
 
   def show
