@@ -36,9 +36,9 @@
   <%= link_to dog_path(@dog.id-1) do %>
     <i class="fa-solid fa-chevron-left"></i>
   <% end %>
-  <%#= link_to dog_likes_path(@dog) do %>
+  <%= link_to dog_likes_path(@dog), data: {turbo_method: :post} do %>
     <i class="fa-solid fa-paw" id='pawpaw'></i>
-  <%# end %>
+  <% end %>
   <%= link_to dog_path(@dog.id+1) do %>
     <i class="fa-solid fa-chevron-right"></i>
   <% end %>
