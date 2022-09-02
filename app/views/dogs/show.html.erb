@@ -12,12 +12,14 @@
       <div>
         <ul style='text-align: end; list-style: none;'>
           <li><h6><%= @dog.species %></h6></li>
-          <%# <li><h6><%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [dog.latitude, dog.longitude]).round(1) %></h6></li> %>
+          <li><h6>
+            <%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [@dog.latitude, @dog.longitude]).round(1) %>
+           km d'ici</h6></li>
         </ul>
       </div>
     </div>
     <div class='description'>
-      <h6><%= @dog.description %></h6>  
+      <h6><%= @dog.description %></h6>
     </div>
     <div class='toys'>
       <% @dog.toys.each do |toy| %>
@@ -36,5 +38,3 @@
         <% end %>
     </div>
 </div>
-
-

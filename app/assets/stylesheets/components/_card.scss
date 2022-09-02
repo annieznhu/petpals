@@ -15,15 +15,16 @@
 
 }
 
+a {
+  text-decoration: none;
+}
+
 .card-dog {
   background-color: transparent;
   border: none;
   padding: 10px;
   position: relative;
 
-  a {
-    text-decoration: none;
-  }
 
   h2 {
     color: $dog-gray;

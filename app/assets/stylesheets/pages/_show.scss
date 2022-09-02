@@ -1,4 +1,6 @@
-
+ul {
+  padding-left: 12px;
+}
 
 
 .banner-dog {
@@ -19,11 +21,11 @@
     border-bottom: 1px solid $dog-gray;
     margin-left: 15px;
     margin-right: 15px;
-    
+
     h5 {
         color: $dog-gray;
     }
-    
+
     h6 {
         font-size: 15px;
         color: $dog-gray;
