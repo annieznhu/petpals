@@ -1,6 +1,7 @@
 <h1 class="title-index">Tous mes matchs</h1>
-<div class="card-match">
+<div class="cards-match">
 <% @matches.each do |match| %>
+<div class="card-match">
   <%= cl_image_tag match.second_dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
     <div class="match-info">
       <h2><%=match.second_dog.name%></h2>
@@ -9,5 +10,6 @@
    <%= link_to match_path(match) do %>
    <%= image_tag "chat-heart.png", class: "heart" %>
    <% end %>
+</div>
   <% end %>
 </div>
