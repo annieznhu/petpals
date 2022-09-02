@@ -1,53 +1,56 @@
 <%= render 'shared/search_bar' %>
 <div class='cards-dogs'>
   <% @dogs.each do |dog| %>
-    <div class='card-dog'>
-      <div class='card-top'>
-        <div id="carouselExampleIndicators<%= dog.id %>" class="carousel slide" data-bs-ride="false">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators<%= dog.id %>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators<%= dog.id %>" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          </div>
-          <div class="carousel-inner">
-            <% dog.photos.each do |photo| %>
-              <% if photo == dog.photos.first %>
-                <div class="carousel-item active">
-                  <%= cl_image_tag photo.key, crop: :fill %>
-                </div>
-              <%else%>
-                <div class="carousel-item">
-                  <%= cl_image_tag photo.key, crop: :fill %>
-                </div>
+  <%= dog.id %>
+    <%= link_to dog_path(dog) do %>
+      <div class='card-dog'>
+        <div class='card-top'>
+          <div id="carouselExampleIndicators<%= dog.id %>" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators<%= dog.id %>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators<%= dog.id %>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+              <% dog.photos.each do |photo| %>
+                <% if photo == dog.photos.first %>
+                  <div class="carousel-item active">
+                    <%= cl_image_tag photo.key, crop: :fill %>
+                  </div>
+                <%else%>
+                  <div class="carousel-item">
+                    <%= cl_image_tag photo.key, crop: :fill %>
+                  </div>
+                <%end%>
               <%end%>
-            <%end%>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators<%= dog.id %>" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators<%= dog.id %>" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators<%= dog.id %>" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators<%= dog.id %>" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+          <%#= link_to like_path do %> <%# ligne à décommenter lorsque 'like' sera implémenté %>
+            <i class='fa-solid fa-paw paw'></i>
+          <%# end %>
         </div>
-        <%#= link_to like_path do %> <%# ligne à décommenter lorsque 'like' sera implémenté %>
-          <i class='fa-solid fa-paw paw'></i>
-        <%# end %>
-      </div>
-      <div class='card-bottom'>
-        <div class='card-left'>
-          <ul style='list-style: none'>
-            <li><h2><%= dog.name %></h2></li>
-            <li><h5><%= pluralize( dog.age, 'an' ) %></h5></li>
-            <li><h5><%= dog.temper %></h5></li>
-          </ul>
-        </div>
-        <div class='card-right'>
-          <h5><i class='fa-solid fa-location-dot' style='color: $dog-gray'></i>
-          <%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [dog.latitude, dog.longitude]).round(1) %>
-          km d'ici</h5>
+        <div class='card-bottom'>
+          <div class='card-left'>
+            <ul style='list-style: none'>
+              <li><h2><%= dog.name %></h2></li>
+              <li><h5><%= pluralize( dog.age, 'an' ) %></h5></li>
+              <li><h5><%= dog.temper %></h5></li>
+            </ul>
+          </div>
+          <div class='card-right'>
+            <h5><i class='fa-solid fa-location-dot' style='color: $dog-gray'></i>
+            <%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [dog.latitude, dog.longitude]).round(1) %>
+            km d'ici</h5>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>

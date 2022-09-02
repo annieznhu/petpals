@@ -1,4 +1,4 @@
-<h1>Bon retour parmi nous <%= current_user.first_name %>  👋</h1>
+<%= cl_image_tag current_user.photo.key, crop: :fill, class: 'avatar' %> <h1>Bon retour parmi nous <%= current_user.first_name %>  👋</h1>
 <h2>Les profils recommandés</h2>
 <div class="dogs-cards">
   <% @dogs.each do |dog| %>
@@ -15,4 +15,12 @@
     </div>
   <% end %>
 </div>
-<h2>Les balades du jour</h2>
+<h2>Les balades de +/- 30 jours</h2>
+<% @meetings.each do |meeting| %>
+  <% if meeting.date.between?(Date.today-30, Date.today+30) %>
+  <div class="card">
+    Avec <%= meeting.second_dog.name %>
+    Date : <%= meeting.place.name %>
+  </div>
+  <% end %>
+  <% end %>

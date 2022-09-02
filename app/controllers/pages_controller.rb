@@ -6,5 +6,6 @@ class PagesController < ApplicationController
 
   def home_user
     @dogs = Dog.all.sample(6)
+    @meetings = Meeting.all
   end
 end

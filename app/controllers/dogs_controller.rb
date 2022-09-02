@@ -8,10 +8,10 @@ class DogsController < ApplicationController
   def show
   end
 
-  private 
+  private
 
   def dog_params
-    params.require(:dog).permit(:name, :temper, :age, :description, :species, :user, :address, :photos)
+    params.require(:dog).permit(:name, :temper, :age, :description, :species, :user, :address, :photos, :latitude, :longitude)
   end
 
   def set_dog
