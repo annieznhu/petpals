@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .banner {
-  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(dogs_visitor_home_page.jpg);
+  background-image: url("https://res.cloudinary.com/dmb26cn0z/image/upload/v1662148866/development/dogs_visitor_home_page_nckhct.jpg");
   background-size: cover;
   height: 50vh;
   display: flex;
@@ -13,16 +13,18 @@
 
   h1.title {
     font-size: 80px;
-    font-family: 'Fredoka One';
+    font-family: $headers-font;
     opacity: 0.9;
   }
+
   .button {
     width: max-content;
   }
+
   h2 {
     color: white;
     text-align: center;
-    font-family: 'Dosis';
+    font-family: $body-font;
   }
 }
 
