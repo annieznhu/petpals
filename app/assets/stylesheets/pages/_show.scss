@@ -4,16 +4,20 @@ ul {
 
 
 .banner-dog {
-    background-image: url(dogs_visitor_home_page.jpg);
-    background-size: cover;
     height: 40vh;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     background-position: center;
-    align-items: center;
-    padding: 10px;
     margin-bottom: 25px;
+
+    img {
+      aspect-ratio: 1 / 1;
+      height: 40vh;
+      margin: 0;
+      object-fit:cover;
+      padding: 0;
+    }
 }
  .dog_infos {
     display: flex;

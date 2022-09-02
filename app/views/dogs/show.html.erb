@@ -1,5 +1,6 @@
 <div class="container-dog">
     <div class="banner-dog">
+      <%= cl_image_tag @dog.photos.first.key, crop: :fill %>
     </div>
     <div class="dog_infos">
       <div>
