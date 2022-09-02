@@ -1,7 +1,10 @@
+.container-dog {
+  overflow: scroll;
+}
+
 ul {
   padding-left: 12px;
 }
-
 
 .banner-dog {
     height: 40vh;
@@ -19,6 +22,7 @@ ul {
       padding: 0;
     }
 }
+
  .dog_infos {
     display: flex;
     justify-content: space-between;
