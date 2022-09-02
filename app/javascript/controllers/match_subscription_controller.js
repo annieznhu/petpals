@@ -27,13 +27,16 @@ export default class extends Controller {
     if (this.userIdValue === data.user_id) {
       console.log('my message')
       this.messagesTarget.insertAdjacentHTML("beforeend", data.html)
+      const lastMessage = this.messageTargets.slice(-1)[0]
+      lastMessage.classList.add('message-current-user')
+      lastMessage.classList.remove('message-other-user')
     } else {
       console.log('other message')
       this.messagesTarget.insertAdjacentHTML("beforeend", data.html)
       const lastMessage = this.messageTargets.slice(-1)[0]
 
-      lastMessage.classList.add('message-current-user')
-      lastMessage.classList.remove('message-other-user')
+      lastMessage.classList.add('message-other-user')
+      lastMessage.classList.remove('message-current-user')
       console.log(lastMessage)
     }
 
