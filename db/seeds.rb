@@ -14,6 +14,7 @@ start_time = Time.new
 
 puts "Destroying old data"
 
+
 Review.destroy_all
 Meeting.destroy_all
 Place.destroy_all
@@ -68,7 +69,7 @@ dog_16 = Dog.create!(user: user_16, name: 'Rex', age: '7', species: 'Berger Alle
 dog_17 = Dog.create!(user: user_17, name: 'Marvin', age: '5', species: 'Labrador', temper: 'Agressif', address: '19 Rue de la Solidarité, 75019 Paris', description: 'J’habite actuellement chez mon chien. C’est lui le chef de famille.', toys: ['Chaussures', 'Balles'])
 dog_18 = Dog.create!(user: user_18, name: 'Zoro', age: '3', species: 'Chihuahua', temper: 'Craintif', address: '12 Rue Buot, 75013 Paris', description: 'Zoro est un peu peureux, mais il adore découvir de nouveaux paysages !', toys: ['Balle, Bâtons'])
 dog_19 = Dog.create!(user: user_19, name: 'Benji', age: '6', species: 'Caniche', temper: 'Joueur', address: '36 Rue Eugène Oudiné, 75013 Paris', description: 'Maitrise les sorts de niveau 1 à 3, niveau 4 en défense contre les forces du mal, maitrise parfaitement le balai. Un peu de mal en potion...', toys: ['Balle', 'Baguette magique'])
-dog_20 = Dog.create!(user: user_20, name: 'Serge', age: '11', species: 'Pitbull', temper: 'Craintif', address: '5 Rue de Metz, 75010 Paris', description: 'Il adore les Hotdogs', toys: ['Bâtons', 'Épée'])
+dog_20 = Dog.create!(user: user_20, name: 'Serge', age: '12', species: 'Pitbull', temper: 'Craintif', address: '5 Rue de Metz, 75010 Paris', description: 'Il adore les Hotdogs', toys: ['Bâtons', 'Épée'])
 
 puts "Creating places"
 
