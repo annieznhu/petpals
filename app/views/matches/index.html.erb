@@ -1,13 +1,20 @@
 <h1 class="title-index">Tous mes matchs</h1>
-<div class="card-match">
-<% @matches.each do |match| %>
-  <%= cl_image_tag match.second_dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
-    <div class="match-info">
-      <h2><%=match.second_dog.name%></h2>
-      <p><%=l(match.second_dog.created_at, format: "Date : %a %e %b à %l:%M")%></p>
-   </div>
-   <%= link_to match_path(match) do %>
-   <%= image_tag "chat-heart.png", class: "heart" %>
-   <% end %>
+<div class="cards-match">
+  <% @matches.each do |match| %>
+    <div class="card-match">
+      <% if match.dog == current_user.dog%>
+        <%= cl_image_tag match.second_dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
+      <% else %>
+        <%= cl_image_tag match.dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
+      <% end %>
+
+      <div class="match-info">
+        <h2><%=match.dog == current_user.dog ? match.second_dog.name : match.dog.name %></h2>
+        <p><%=l(match.created_at, format: "%a %e %b à %l:%M")%></p>
+      </div>
+      <%= link_to match_path(match) do %>
+        <%= image_tag "chat-heart.png", class: "heart" %>
+      <% end %>
+    </div>
   <% end %>
 </div>

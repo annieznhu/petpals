@@ -84,16 +84,16 @@ reviews_6 = Review.create!(place: place_6, user: user_2, content: "Très beau, s
 
 puts "Creating matches"
 
-match_1 = Match.create!(dog: dog_12, second_dog: dog_7)
-match_2 = Match.create!(dog: dog_4, second_dog: dog_7)
-match_3 = Match.create!(dog: dog_11, second_dog: dog_7)
-match_4 = Match.create!(dog: dog_19, second_dog: dog_7)
-match_5 = Match.create!(dog: dog_9, second_dog: dog_7)
-match_10 = Match.create!(dog: dog_12, second_dog: dog_0)
-match_20 = Match.create!(dog: dog_4, second_dog: dog_0)
-match_30 = Match.create!(dog: dog_11, second_dog: dog_0)
-match_40 = Match.create!(dog: dog_19, second_dog: dog_0)
-match_50 = Match.create!(dog: dog_9, second_dog: dog_0)
+match_1 = Match.create!(second_dog: dog_12, dog: dog_7)
+match_2 = Match.create!(second_dog: dog_4, dog: dog_7)
+match_3 = Match.create!(second_dog: dog_11, dog: dog_7)
+match_4 = Match.create!(second_dog: dog_19, dog: dog_7)
+match_5 = Match.create!(second_dog: dog_9, dog: dog_7)
+match_10 = Match.create!(second_dog: dog_12, dog: dog_0)
+match_20 = Match.create!(second_dog: dog_4, dog: dog_0)
+match_30 = Match.create!(second_dog: dog_11, dog: dog_0)
+match_40 = Match.create!(second_dog: dog_19, dog: dog_0)
+match_50 = Match.create!(second_dog: dog_9, dog: dog_0)
 
 puts "Creating likes"
 
