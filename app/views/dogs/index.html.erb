@@ -33,7 +33,7 @@
           </div>
           <div data-controller="like-button">
             <%= link_to dog_likes_path(dog), data: {turbo_method: :post} do %>
-              <i class="fa-solid fa-paw paw" data-like-button-target="icon" data-action="click->like-button#like" id="btnpaw"></i>
+              <i class="fa-solid fa-paw paw <%= dog.users.include?(current_user) ? "likedpaw" : "btnpaw" %>" data-like-button-target="icon" data-action="click->like-button#like" ></i>
             <% end %>
           </div>
         </div>
