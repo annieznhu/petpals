@@ -1,6 +1,52 @@
 .alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
   z-index: 1000;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  .modal-content {
+    text-align: center;
+  }
+
+}
+
+.heart{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  .dog {
+    background-image: url("coeur.png");
+    display: flex;
+    width: 90vw;
+    height: 40vh;
+    justify-content: space-around;
+    background-size: contain;
+    background-repeat: no-repeat;
+    .gauche, .droite {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .button {
+
+    background-color: rgb(247, 182, 63);
+    border-radius: 20px;
+    border-color: rgb(247, 187, 76);
+    color: white;
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+    width: 120px;
+    padding: 15px;
+    justify-content: center;
+
+
+  }
 }

@@ -12,7 +12,11 @@
     <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
     <%= render 'shared/ios_pwa_links' %>
   </head>
+  <% if alert %>
+  <body style="overflow:hidden;">
+  <% else %>
   <body>
+  <% end %>
     <%= render "shared/flashes" %>
     <div class="content-wrapper">
       <%= yield %>
