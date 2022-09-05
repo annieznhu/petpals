@@ -19,12 +19,44 @@
     <% end %>
   </div>
   <%= simple_form_for [@match, @message], html: { data: { action: "turbo:submit-end->match-subscription#resetForm" }, class: "d-flex align-items-center" } do |f| %>
-    <%= link_to root_path, class: "icon-calender" do %>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
       <i class="fa-regular fa-calendar-plus"></i>
-    <% end %>
+    </button>
     <%= f.input :content, label: false, placeholder: "Dis quelque chose", wrapper_html: {class: "flex-grow-1"} %>
     <%= button_tag class: "icon" do %>
       <i class="fa-regular fa-paper-plane"></i>
     <% end %>
   <% end %>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Planifier votre balade</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for [@match, @meeting], html: {
+                      data: {
+                        controller: 'flatpickr',
+                        turbo: false
+                      }
+                    } do |f| %>
+          <%= f.input :date,
+              as: :string,
+              input_html: {
+                data: {
+                  flatpickr_target: 'dateInput',
+                }
+              } %>
+          <%= f.association :place %>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          <%= f.submit class: 'btn btn-primary', value: 'Planifier' %>
+      </div>
+        <% end %>
+    </div>
+  </div>
 </div>
