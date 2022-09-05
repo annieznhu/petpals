@@ -31,9 +31,11 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-          <%= link_to dog_likes_path(dog), data: {turbo_method: :post} do %>
-            <i class="fa-solid fa-paw paw"></i>
-          <% end %>
+          <div data-controller="like-button">
+            <%= link_to dog_likes_path(dog), data: {turbo_method: :post} do %>
+              <i class="fa-solid fa-paw paw" data-like-button-target="icon" data-action="click->like-button#like" id="btnpaw"></i>
+            <% end %>
+          </div>
         </div>
         <div class="index-card-bottom">
           <div class="index-card-left">
