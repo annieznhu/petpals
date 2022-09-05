@@ -8,6 +8,8 @@ class Dog < ApplicationRecord
   has_many :walks
   has_many :likes
 
+  has_many :users, through: :likes
+
   has_many :dog_matches, class_name: 'Match', foreign_key: 'dog_id'
   has_many :second_dog_matches, class_name: 'Match', foreign_key: 'second_dog_id'
 
