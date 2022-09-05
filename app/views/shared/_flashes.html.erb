@@ -5,10 +5,27 @@
     </button>
   </div>
 <% end %>
-<% if alert %>
-  <div class="alert alert-warning alert-dismissible fade show m-1" role="alert">
-    <%= alert %>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-    </button>
+<% if flash[:alert] %>
+
+  <div class="alert alert-dismissible fade show m-1" role="alert">
+    <div class="modal-content">
+     <h1><%= flash[:alert] %></h1>
+    </div>
+    <div class="heart">
+    <div class="dog">
+      <% match = current_user.dog.matches.last %>
+      <div class="gauche">
+        <%= cl_image_tag match.second_dog.photos.first.key, width: 200, height: 200, crop: :fill , class: "avatar match-avatar"%>
+        <h1><%= match.second_dog.name %></h1>
+      </div>
+      <div class="droite">
+      <%= cl_image_tag match.dog.photos.first.key, width: 200, height: 200, crop: :fill , class: "avatar match-avatar"%>
+      <h1><%= match.dog.name %></h1>
+      </div>
+    </div>
+      <%#= image_tag('coeur.png') %>
+      <%= link_to "Contacter mon maitre", matches_path, class: "button" %>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <% end %>
