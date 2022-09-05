@@ -99,7 +99,11 @@ puts "Creating likes"
 
 like_1 = Like.create!(user: user_5, dog: dog_7)
 like_2 = Like.create!(user: user_2, dog: dog_7)
-like_3 = Like.create!(user: user_15, dog: dog_7)
+like_3 = Like.create!(user: user_7, dog: dog_4)
+like_4 = Like.create!(user: user_7, dog: dog_9)
+like_5 = Like.create!(user: user_7, dog: dog_11)
+like_6 = Like.create!(user: user_7, dog: dog_12)
+like_7 = Like.create!(user: user_7, dog: dog_19)
 like_10 = Like.create!(user: user_5, dog: dog_0)
 like_20 = Like.create!(user: user_2, dog: dog_0)
 like_30 = Like.create!(user: user_15, dog: dog_0)
