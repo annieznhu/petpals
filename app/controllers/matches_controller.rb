@@ -6,5 +6,7 @@ class MatchesController < ApplicationController
   def show
     @match = current_user.dog.matches.find(params[:id])
     @message = Message.new
+    @meeting = Meeting.new
+    @places = Place.all
   end
 end
