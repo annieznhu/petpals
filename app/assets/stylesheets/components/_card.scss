@@ -1,4 +1,4 @@
-.cards-dogs {
+.index-cards-dogs {
   display: grid;
   grid-template-columns: 1fr;
   height: calc(100vh - 80px - 80px);
@@ -11,15 +11,13 @@
   border-radius: 50%;
   height: 10px;
   width: 10px;
-
-
 }
 
 a {
   text-decoration: none;
 }
 
-.card-dog {
+.index-card-dog {
   background-color: transparent;
   border: none;
   padding: 10px;
@@ -27,8 +25,9 @@ a {
 
 
   h2 {
-    color: $dog-gray;
+    color: black;
     font-family: "Fredoka One";
+    font-weight: 700;
     font-size: 18px;
     margin-bottom: 2px;
   }
@@ -59,17 +58,17 @@ a {
     top: 30px;
   }
 
-  .card-bottom {
+  .index-card-bottom {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 8px;
 
-    .card-left {
+    .index-card-left {
       margin-left: 12px;
     }
 
-    .card-right {
+    .index-card-right {
       margin-right: 12px;
     }
 

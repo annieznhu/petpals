@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-
 require "open-uri"
 
 puts "Start seeding"
@@ -13,7 +5,6 @@ puts "Start seeding"
 start_time = Time.new
 
 puts "Destroying old data"
-
 
 Review.destroy_all
 Meeting.destroy_all
@@ -27,6 +18,7 @@ puts "Old data destroyed"
 
 puts "Creating users"
 
+user_0 = User.create!(first_name: 'Prétest', last_name: 'Nomtest', email: 'test@test.com', username: 'Testest', password: 'azerty', description: "J'adore tester des trucs dans la vie, surtout des applications de test ! Trop cool les tests, vraiment je suis méga fan des tests, c'est génial.")
 user_1 = User.create!(first_name: 'Charles', last_name: 'Sanse', email: 'charles.sanse@mail.com', username: 'CharlesSanse', password: 'azerty', description: 'J’ai grandi avec des animaux, j’adore les chiens.')
 user_2 = User.create!(first_name: 'Anthony', last_name: 'Plisson', email: 'anthony.plisson@laposte.net', username: 'AntoP', password: 'azerty', description: 'J’ai Sirius depuis 3 ans, maintenant, il est la star du parc')
 user_3 = User.create!(first_name: 'Nadia', last_name: 'Fluck', email: 'nadia-fluck@yahoo.fr', username: 'NadiaFluuuck', password: 'azerty', description: 'Je viens d’emménager dans le quartier avec Izy, je lui cherche des amis')
@@ -50,6 +42,7 @@ user_20 = User.create!(first_name: 'Jeanne', last_name: 'Marc', email: 'brulee@v
 
 puts "Creating dogs"
 
+dog_0 = Dog.create!(user: user_0 ,name: 'Dogger', age: '2', species: 'Carlin', temper: 'Joueur', address: '1 rue de la Paix, 75002 Paris', description: "Je suis le chien du testeur fou, en vrai c'est pas si mal comme vie être chien de testeur, je pense pas que ça soit une bonne ou une mauvaise situation.", toys: ['Chaussure', 'Fraises'])
 dog_1 = Dog.create!(user: user_1 ,name: 'Medor', age: '3', species: 'Labrador', temper: 'Hyperactif', address: '5 Rue Fortuny, 75017 Paris', description: 'Beaucoup (trop) d’énergie à dépenser mais toujours bienveillant avec les enfants.', toys: ['Balle', 'Bâtons'])
 dog_2 = Dog.create!(user: user_2 ,name: 'Majax', age: '5', species: 'Golden Retriever', temper: 'Joueur', address: '52 Rue Saint-Lazare, 75009 Paris', description: 'Très gentil et affectueux, prudent avec les plus petits chiens. Récemment débarqué dans le quartier, à la recherche de nouveaux copains à me faire dans les alentours !', toys: ['Chaussures', 'Boomrang'])
 dog_3 = Dog.create!(user: user_3 ,name: 'Sirius', age: '9', species: 'Caniche', temper: 'Amical', address: '48 Bd de Vaugirard, 75015 Paris', description: 'Tout mimi, pas très à l’aise avec les gros chiens, très dynamique !', toys: ['Balles', 'Feuilles'])
@@ -96,12 +89,20 @@ match_2 = Match.create!(second_dog: dog_4, dog: dog_7)
 match_3 = Match.create!(second_dog: dog_11, dog: dog_7)
 match_4 = Match.create!(second_dog: dog_19, dog: dog_7)
 match_5 = Match.create!(second_dog: dog_9, dog: dog_7)
+match_10 = Match.create!(second_dog: dog_12, dog: dog_0)
+match_20 = Match.create!(second_dog: dog_4, dog: dog_0)
+match_30 = Match.create!(second_dog: dog_11, dog: dog_0)
+match_40 = Match.create!(second_dog: dog_19, dog: dog_0)
+match_50 = Match.create!(second_dog: dog_9, dog: dog_0)
 
 puts "Creating likes"
 
 like_1 = Like.create!(user: user_5, dog: dog_7)
 like_2 = Like.create!(user: user_2, dog: dog_7)
 like_3 = Like.create!(user: user_15, dog: dog_7)
+like_10 = Like.create!(user: user_5, dog: dog_0)
+like_20 = Like.create!(user: user_2, dog: dog_0)
+like_30 = Like.create!(user: user_15, dog: dog_0)
 
 puts "Creating meetings"
 
@@ -110,7 +111,13 @@ meeting_2 = Meeting.create!(place: place_2, date: "2022-08-01", dog: dog_7, seco
 meeting_3 = Meeting.create!(place: place_2, date: "2022-08-08", dog: dog_7, second_dog: dog_19)
 meeting_4 = Meeting.create!(place: place_2, date: "2022-07-31", dog: dog_7, second_dog: dog_9)
 
+puts "Adding photos"
 
+file = URI.open("https://images.unsplash.com/photo-1565084895640-9504e8ccb656")
+file_2 = URI.open("https://images.unsplash.com/photo-1565084896092-78e6d1e8cce0")
+dog_0.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+dog_0.photos.attach(io: file_2, filename: "dogo.png", content_type: "image/png")
+dog_0.save
 
 file = URI.open("https://images.unsplash.com/photo-1537204696486-967f1b7198c8")
 file_2 = URI.open("https://images.unsplash.com/photo-1529831129093-0fa4866281ee")
@@ -233,6 +240,10 @@ dog_20.photos.attach(io: file_2, filename: "nes.png", content_type: "image/png")
 dog_20.save
 
 puts "Almost done..."
+
+file = URI.open("https://images.unsplash.com/photo-1549068106-b024baf5062d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
+user_0.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_0.save
 
 file = URI.open("https://images.unsplash.com/photo-1531945086322-64e2ffae14a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFsZXx8fHx8fDE2NjE5NTU2NzY&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
 user_1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")

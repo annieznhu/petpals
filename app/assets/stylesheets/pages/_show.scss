@@ -58,7 +58,7 @@ ul {
     h6 {
         font-family: $body-font;
         color: $dog-gray;
-        font-weight: bold;
+        font-weight: normal;
         line-height: 2;
     }
 }
@@ -73,6 +73,8 @@ ul {
     border: 1px solid black;
     border-radius: 50px;
     padding: 9px;
+    width: 120px;
+    text-align: center;
 }
 
 .like_swap {

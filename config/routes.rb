@@ -2,13 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   authenticated :user do
-    root to: "pages#home", as: :user_root
+    root to: "pages#home_user", as: :user_root
   end
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
   resource :profile, only: %i[edit update]
 
   resources :dogs, only: %i[index show edit update] do
