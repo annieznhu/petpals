@@ -88,18 +88,32 @@ ul {
     bottom: 79px;
     width: 100%;
 
-    i {
+    .chevron {
         color: $dog-gray;
         font-size: 50px;
-        opacity: 0.3;
+        opacity: 0.4;
     }
 }
 
 #pawpaw {
-    font-size: 85px;
-    color: #EFB05F;
-    opacity : 1;
+    background-color: transparent;
+    color: rgb(185, 185, 185);
+    z-index: 100;
+    font-size: 70px;
+  }
+
+.likedpaw {
+    background-color: transparent;
+    color: #EFB05F !important;
+    z-index: 100;
+    font-size: 70px;
 }
+
+// #pawpaw {
+//     font-size: 85px;
+//     color: #EFB05F;
+//     opacity : 1;
+// }
 
 // #all_infos {
 //     height: 40vh;
