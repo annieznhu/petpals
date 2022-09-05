@@ -12,6 +12,15 @@
     background-color: transparent;
     border: none;
     margin: 0px 12px;
+    &:focus {
+      color: #0E0000;
+      border: none;
+      background-color: white;
+      border-color: #86b7fe;
+      outline: 0;
+      box-shadow: none;
+    }
+
   }
 
 }

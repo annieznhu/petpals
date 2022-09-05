@@ -2,10 +2,10 @@ class DogsController < ApplicationController
   before_action :set_dog, only: %i[show]
 
   def index
-    if current_user.dog
-      @dogs = Dog.all.where.not(id: current_user.dog.id)
-    else
-      @dogs = Dog.all
+    @dogs = Dog.where.not(user: current_user)
+
+    if params.dig(:query).present?
+      @dogs = @dogs.global_search(params[:query])
     end
   end
 

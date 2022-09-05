@@ -16,6 +16,13 @@ class Dog < ApplicationRecord
 
   has_many_attached :photos
 
+  include PgSearch::Model
+  pg_search_scope :global_search,
+  against: [:temper, :address, :name, :species, :age, :description],
+  using: {
+    tsearch: { prefix: true }
+  }
+
   def matches
     Match.where(id: dog_match_ids + second_dog_match_ids)
   end
