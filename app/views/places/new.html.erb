@@ -1,6 +1,6 @@
     <%= simple_form_for(@place) do |f| %>
       <%= f.input :name, label: "Nom du parc"%>
-      <%= f.input :address, label: "Adresse", input_html: {data: {address_autocomplete_target: "address"}},
+      <%= f.input :address, label: "Adresse", input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
   wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
 %>
       <%= f.input :photo%>
