@@ -36,27 +36,28 @@
         <h5 class="modal-title" id="exampleModalLabel">Planifier votre balade</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <%= simple_form_for [@match, @meeting], html: {
-                      data: {
-                        controller: 'flatpickr',
-                        turbo: false
-                      }
-                    } do |f| %>
+      <%= simple_form_for [@match, @meeting], html: {
+                    data: {
+                      # controller: 'flatpickr',
+                      turbo: false
+                    }
+                  } do |f| %>
+        <div class="modal-body">
           <%= f.input :date,
-              as: :string,
+              # as: :string,
+              html5: true,
               input_html: {
                 data: {
                   flatpickr_target: 'dateInput',
                 }
               } %>
-          <%= f.association :place %>
-      </div>
-      <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-          <%= f.submit class: 'btn btn-primary', value: 'Planifier' %>
-      </div>
-        <% end %>
+          <%= f.association :place, label: 'Lieu' %>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            <%= f.submit class: 'btn btn-primary', value: 'Planifier' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

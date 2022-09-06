@@ -10,7 +10,8 @@ class MeetingsController < ApplicationController
     if @meeting.save
       redirect_to match_path(@match)
     else
-      render "match/show", status: :unprocessable_entity
+      redirect_to match_path(@match), status: :unprocessable_entity
+      flash.alert = "Erreur"
     end
   end
 
