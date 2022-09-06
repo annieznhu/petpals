@@ -15,3 +15,6 @@ application.register("like-button", LikeButtonController)
 
 import MatchSubscriptionController from "./match_subscription_controller"
 application.register("match-subscription", MatchSubscriptionController)
+
+import MeetingModalController from "./meeting_modal_controller"
+application.register("meeting-modal", MeetingModalController)
