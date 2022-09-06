@@ -8,10 +8,11 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.new(meeting_params)
     @meeting.dog = @match.dog
     @meeting.second_dog = @match.second_dog
+
     if @meeting.save
-      redirect_to match_path(@match)
+      render json: success_response
     else
-      render "match/show", status: :unprocessable_entity
+      render json: failure_response
     end
   end
   
@@ -27,5 +28,27 @@ class MeetingsController < ApplicationController
 
   def meeting_params
     params.require(:meeting).permit(:date, :place_id, :dog_id, :second_dog_id)
+  end
+
+  def success_response
+    {
+      status: :success,
+      html: render_to_string(
+        partial: 'matches/meeting_modal',
+        locals: { meeting: @meeting, match: @match },
+        formats: [:html]
+      )
+    }
+  end
+
+  def failure_response
+    {
+      status: :failure,
+      html: render_to_string(
+        partial: 'matches/meeting_modal',
+        locals: { meeting: @meeting, match: @match },
+        formats: [:html]
+      )
+    }
   end
 end

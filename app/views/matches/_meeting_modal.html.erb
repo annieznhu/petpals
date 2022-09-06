@@ -1,0 +1,28 @@
+<div class="modal-content" data-meeting-modal-target="content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Planifier une balade</h5>
+    <button data-meeting-modal-target="close" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <%= simple_form_for [match, meeting], url: match_meetings_path(match), method: :post, html: {
+                data: {
+                  turbo: false,
+                  meeting_modal_target: 'form',
+                  action: 'submit->meeting-modal#submit'
+                }
+              } do |f| %>
+    <div class="modal-body">
+      <%= f.input :date,
+          html5: true,
+          input_html: {
+            data: {
+              flatpickr_target: 'dateInput',
+            }
+          } %>
+      <%= f.association :place, label: 'Lieu' %>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+      <%= f.submit class: 'btn btn-primary', value: 'Planifier' %>
+    </div>
+  <% end %>
+</div>

@@ -10,6 +10,11 @@ class DogsController < ApplicationController
   end
 
   def show
+    dogs = Dog.where.not(user: current_user)
+    @dogs = []
+    dogs.each do |dog|
+      @dogs << dog
+    end
   end
 
   private

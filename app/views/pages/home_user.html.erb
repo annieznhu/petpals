@@ -1,26 +1,14 @@
-<%= cl_image_tag current_user.photo.key, crop: :fill, class: 'avatar' %> <h1>Bon retour parmi nous <%= current_user.first_name %>  👋</h1>
-<h2>Les profils recommandés</h2>
-<div class="dogs-cards">
-  <% @dogs.each do |dog| %>
-    <div class="dog-card">
-      <div class="card-left">
-        <%= cl_image_tag dog.photos.first.key, crop: :fill, class: 'dog-card' %>
-      </div>
-      <div class="card-right">
-        <span><strong><%= dog.name %></strong><span>
-        <span>
-        <%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [dog.latitude, dog.longitude]).round(1) %>
-        km d'ici</span>
-      </div>
-    </div>
+<div class="header-home-user">
+  <div class="mask">
+    <%= cl_image_tag current_user.photo.key, crop: :fill, class: 'avatar-user' %>
+  </div>
+  <h1>Bonjour <%= current_user.first_name %>  👋</h1>
+</div>
+<h2>Les derniers profils likés</h2>
+
+<div class="likes-cards">
+  <% @likes.each do |like| %>
+    <%=cl_image_tag like.dog.photos.first.key%>
+    <span><strong><%= like.dog.name %></strong><span>
   <% end %>
 </div>
-<h2>Les balades de +/- 30 jours</h2>
-<% @meetings.each do |meeting| %>
-  <% if meeting.date.between?(Date.today-30, Date.today+30) %>
-  <div class="card">
-    Avec <%= meeting.second_dog.name %>
-    Date : <%= meeting.place.name %>
-  </div>
-  <% end %>
-  <% end %>

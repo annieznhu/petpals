@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def home_user
-    @dogs = Dog.all.sample(6)
-    @meetings = Meeting.all
+    @likes = Like.where(dog: current_user.dog).last(4)
+    @meetings = Meeting.where(date: Date.today)
   end
 end
