@@ -1,7 +1,4 @@
-.dogs-cards {
-  display: grid;
-  grid-gap: 6px;
-  grid-template-columns: 1fr 1fr;
+.likes-cards {
   padding: 0 24px 0 24px;
 
   img {
@@ -13,7 +10,21 @@
 
 }
 
-.dog-card {
+.header-home-user {
   display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.mask {
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
   overflow: hidden;
+  margin: 15px;
+
+  img {
+    max-width: 100%;
+  }
 }

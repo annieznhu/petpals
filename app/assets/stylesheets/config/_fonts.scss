@@ -1,10 +1,11 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Dosis:wght@300;400;600;700&family=Fredoka&family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Dosis:wght@300;400;600;700&family=Fredoka&family=Fredoka+One&family=Gamja+Flower&display=swap');
 
 // Define fonts for body and headers
 $body-font: "Dosis", "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Fredoka", "Fredoka One", "Concert One", "Nunito", "Helvetica", "sans-serif";
+$title-font: "Gamja Flower";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
