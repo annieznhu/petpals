@@ -4,8 +4,8 @@
 
 import { application } from "./application"
 
-// import FlatpickrController from "./flatpickr_controller"
-// application.register("flatpickr", FlatpickrController)
+import FlatpickrController from "./flatpickr_controller"
+application.register("flatpickr", FlatpickrController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
@@ -15,3 +15,6 @@ application.register("like-button", LikeButtonController)
 
 import MatchSubscriptionController from "./match_subscription_controller"
 application.register("match-subscription", MatchSubscriptionController)
+
+import MeetingModalController from "./meeting_modal_controller"
+application.register("meeting-modal", MeetingModalController)
