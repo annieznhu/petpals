@@ -1,8 +1,8 @@
-<% if flash[:alert] && current_user %>
+<% if flash[:match] && current_user %>
 
-  <div class="alert alert-dismissible fade show m-1" role="alert">
+  <div class="alert alert-info alert-match alert-dismissible fade show m-1" role="alert">
     <div class="modal-content">
-     <h1><%= flash[:alert] %></h1>
+     <h1><%= flash[:match] %></h1>
     </div>
     <div class="heart">
     <div class="dog">
