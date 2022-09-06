@@ -1,11 +1,13 @@
 <div class=main-container>
   <% if @today_meetings.any? %>
     <div class='today-container'>
+      <div>
         <h1 class="title-meetings-index">Balades du jour </h1>
         <% @today_meetings.each do |meeting| %>
             <h2>Balade avec <%= meeting.second_dog.name %></h2>
             <h5>Balade à <%= meeting.place.name %></h5>
         <% end %>
+      </div>
     </div>
   <% end %>
   <% if @future_meetings.any? %>
