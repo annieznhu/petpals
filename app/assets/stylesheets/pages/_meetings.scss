@@ -1,8 +1,39 @@
 .title-meetings-index {
     font-size: larger;
-    background-color: orange;
+    background-color:rgb(185, 185, 185);
 }
 
-.future-container {
-    display: block;
+.time-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
 }
+
+.card-meeting {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+
+    card-infos {
+        display: flex;
+        flex-direction: column;
+    }
+
+    
+}
+
+
+.dog-image {
+    height: 100px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.card-infos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+}
+

@@ -1,33 +1,63 @@
 <div class=main-container>
-  <% if @today_meetings.any? %>
-    <div class='today-container'>
-      <div>
-        <h1 class="title-meetings-index">Balades du jour </h1>
-        <% @today_meetings.each do |meeting| %>
-            <h2>Balade avec <%= meeting.second_dog.name %></h2>
-            <h5>Balade à <%= meeting.place.name %></h5>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-  <% if @future_meetings.any? %>
-    <div class= 'future-container'>
+    <% if @today_meetings.any? %>
+        <h1 class="title-meetings-index">Balades du jour</h1>
+        <div class= 'time-container'>
+            <% @today_meetings.each do |meeting| %>
+            <div class='card-meeting'>
+                <% if meeting.dog == current_user.dog%>
+                    <%= cl_image_tag meeting.second_dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
+                <% else %>
+                    <%= cl_image_tag meeting.dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
+                <% end %>
+                <div class='card-infos'>
+                    <h3>Balade avec <%= meeting.second_dog.name %></h3>
+                    <h6>Lieu: <%= meeting.place.name %></h6>
+                    <h6>Date: <%= meeting.date %></h6>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    <% end %>
+
+    <% if @future_meetings.any? %>
         <h1 class="title-meetings-index">Balades à venir</h1>
-        <% @future_meetings.each do |meeting| %>
-            <h2>Balade avec <%= meeting.second_dog.name %></h2>
-            <h5>Balade à <%= meeting.place.name %></h5>
-        <% end %>
-    </div>
-  <% end %>
-  <% if @past_meetings.any? %>
-    <div class= 'past-container'>
-      <h1 class="title-meetings-index">Balades passées</h1>
-      <% @past_meetings.each do |meeting| %>
-      <h2>Balade avec <%= meeting.second_dog.name %></h2>
-      <h5>Balade à <%= meeting.place.name %></h5>
-      <% end %>
-    </div>
-  <% end %>
+        <div class= 'time-container'>
+            <% @future_meetings.each do |meeting| %>
+            <div class='card-meeting'>
+                <% if meeting.dog == current_user.dog%>
+                    <%= cl_image_tag meeting.second_dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
+                <% else %>
+                    <%= cl_image_tag meeting.dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
+                <% end %>
+                <div class='card-infos'>
+                    <h3>Balade avec <%= meeting.second_dog.name %></h3>
+                    <h6>Lieu: <%= meeting.place.name %></h6>
+                    <h6>Date: <%= meeting.date %></h6>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    <% end %>
+
+    <% if @past_meetings.any? %>
+        <h1 class="title-meetings-index">Balades passées</h1>
+        <div class= 'time-container'>
+            <% @past_meetings.each do |meeting| %>
+            <div class='card-meeting'>
+                <% if meeting.dog == current_user.dog%>
+                    <%= cl_image_tag meeting.second_dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
+                <% else %>
+                    <%= cl_image_tag meeting.dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
+                <% end %>
+                <div class='card-infos'>
+                    <h3>Balade avec <%= meeting.second_dog.name %></h3>
+                    <h6>Lieu: <%= meeting.place.name %></h6>
+                    <h6>Date: <%= meeting.date %></h6>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    <% end %>
 </div>
 
 
