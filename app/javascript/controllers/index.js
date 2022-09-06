@@ -13,5 +13,8 @@ application.register("hello", HelloController)
 import LikeButtonController from "./like_button_controller"
 application.register("like-button", LikeButtonController)
 
+import MapController from "./map_controller"
+application.register("map", MapController)
+
 import MatchSubscriptionController from "./match_subscription_controller"
 application.register("match-subscription", MatchSubscriptionController)

@@ -1,0 +1,29 @@
+.button-map {
+  border-radius: 6px;
+  background-color: #EFB05F;
+  z-index: 9000;
+  position: fixed;
+  right: 33px;
+  bottom: 136px;
+}
+
+.button-map a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  border-color: 1px solid black;
+  padding: 8px 16px;
+font-size: 16px;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+button.mapboxgl-popup-close-button {
+  background-color: white;
+}

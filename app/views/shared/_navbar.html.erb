@@ -3,7 +3,7 @@
     <i class="fa-solid fa-magnifying-glass"></i>
     <p>Explorer</p>
   <% end %>
-  <%= link_to "#", class: "navbar-item" do %>
+  <%= link_to places_path, class: "navbar-item #{ 'active' if current_page?(places_path) }" do %>
     <i class="fa-solid fa-map-location-dot"></i>
     <p>Carte</p>
   <% end %>

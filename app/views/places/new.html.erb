@@ -1,0 +1,6 @@
+    <%= simple_form_for(@place) do |f| %>
+      <%= f.input :name, label: "nom"%>
+      <%= f.input :address, label: "adresse" %>
+      <%= f.input :photo %>
+      <%= f.submit %>
+    <% end %>

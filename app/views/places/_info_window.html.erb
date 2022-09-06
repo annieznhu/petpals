@@ -1,0 +1,9 @@
+<div>
+  <% if place.photo.key %>
+    <%= cl_image_tag place.photo.key, width: 200, height: 200, crop: :fill, class: "park-image"%>
+  <% end %>
+  <div>
+    <h2><%= place.name %></h2>
+    <p><%= place.address %></p>
+  </div>
+</div>
