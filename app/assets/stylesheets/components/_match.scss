@@ -1,6 +1,5 @@
 .match {
   background: white;
-  margin-top: 9px;
   height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
@@ -13,8 +12,6 @@
     border-bottom: 1px solid $gray-200;
     align-items: center;
   }
-
-
 
   .avatar {
 
@@ -49,6 +46,7 @@
       margin-bottom: 0;
     }
   }
+
   .icon-calender {
 
     color: #81b3bc;
@@ -66,6 +64,5 @@
     align-items: left;
     font-size: 2rem;
     margin-bottom: 0.5rem;
-
   }
 }
