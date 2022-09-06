@@ -11,7 +11,7 @@
     <i class="fa-solid fa-comment-dots"></i>
     <p>Messages</p>
   <% end %>
-  <%= link_to "#", class: "navbar-item" do %>
+  <%= link_to meetings_path, class: "navbar-item #{ 'active' if current_page?(meetings_path) }" do %>
     <i class="fa-solid fa-calendar-check"></i>
     <p>Planning</p>
   <% end %>
