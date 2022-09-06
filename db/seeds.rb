@@ -115,6 +115,13 @@ meeting_2 = Meeting.create!(place: place_2, date: "2022-08-01", dog: dog_7, seco
 meeting_3 = Meeting.create!(place: place_2, date: "2022-08-08", dog: dog_7, second_dog: dog_19)
 meeting_4 = Meeting.create!(place: place_2, date: "2022-07-31", dog: dog_7, second_dog: dog_9)
 
+
+
+meeting_6 = Meeting.create!(place: place_2, date: "2025-02-21", dog: dog_7, second_dog: dog_9)
+meeting_7 = Meeting.create!(place: place_2, date: "2026-07-05", dog: dog_7, second_dog: dog_19)
+meeting_8 = Meeting.create!(place: place_2, date: "2026-01-21", dog: dog_7, second_dog: dog_4)
+meeting_9 = Meeting.create!(place: place_2, date: "2031-11-30", dog: dog_7, second_dog: dog_12)
+
 puts "Adding photos"
 
 file = URI.open("https://images.unsplash.com/photo-1565084895640-9504e8ccb656")

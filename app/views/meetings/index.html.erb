@@ -1,0 +1,32 @@
+<div class=main-container>
+  <% if @today_meetings.any? %>
+    <div class='today-container'>
+        <h1 class="title-meetings-index">Balades du jour </h1>
+        <% @today_meetings.each do |meeting| %>
+            <h2>Balade avec <%= meeting.second_dog.name %></h2>
+            <h5>Balade à <%= meeting.place.name %></h5>
+        <% end %>
+    </div>
+  <% end %>
+  <% if @future_meetings.any? %>
+    <div class= 'future-container'>
+        <h1 class="title-meetings-index">Balades à venir</h1>
+        <% @future_meetings.each do |meeting| %>
+            <h2>Balade avec <%= meeting.second_dog.name %></h2>
+            <h5>Balade à <%= meeting.place.name %></h5>
+        <% end %>
+    </div>
+  <% end %>
+  <% if @past_meetings.any? %>
+    <div class= 'past-container'>
+      <h1 class="title-meetings-index">Balades passées</h1>
+      <% @past_meetings.each do |meeting| %>
+      <h2>Balade avec <%= meeting.second_dog.name %></h2>
+      <h5>Balade à <%= meeting.place.name %></h5>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+

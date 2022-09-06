@@ -1,4 +1,5 @@
 class MeetingsController < ApplicationController
+
   def new
   end
 
@@ -13,6 +14,14 @@ class MeetingsController < ApplicationController
       render "match/show", status: :unprocessable_entity
     end
   end
+  
+  def index
+    # @meetings = current_user.dog.meetings
+    @past_meetings = current_user.dog.meetings.send(:past)
+    @today_meetings = current_user.dog.meetings.send(:today)
+    @future_meetings = current_user.dog.meetings.send(:future)
+  end
+  
 
   private
 

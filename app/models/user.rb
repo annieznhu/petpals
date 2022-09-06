@@ -9,4 +9,8 @@ class User < ApplicationRecord
   has_many :messages
   has_one :dog
   has_one_attached :photo
+
+  def any_meetings?(time)
+    dog.meetings.send(time)
+  end
 end
