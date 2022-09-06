@@ -7,7 +7,7 @@
     <i class="fa-solid fa-map-location-dot"></i>
     <p>Carte</p>
   <% end %>
-  <%= link_to matches_path, class: "navbar-item #{ 'active' if current_page?(matches_path) }" do %>
+  <%= link_to matches_path, class: "navbar-item #{ 'active' if params[:controller] == "matches" }" do %>
     <i class="fa-solid fa-comment-dots"></i>
     <p>Messages</p>
   <% end %>
