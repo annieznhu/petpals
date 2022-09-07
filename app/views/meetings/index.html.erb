@@ -15,8 +15,8 @@
                     <% else %>
                         <h3><%= meeting.dog.name %></h3>
                     <% end %>
-                    <h6>Lieu: <%= meeting.place.name %></h6>
-                    <h6>Date: <%= meeting.date %></h6>
+                    <h6> <%= meeting.place.name %></h6>
+                    <h6> <%= l(meeting.date, format: "%d/%m/%Y") %></h6>
                 </div>
             </div>
             <% end %>
@@ -35,8 +35,8 @@
                 <% end %>
                 <div class='card-infos'>
                     <h3><%= meeting.second_dog.name %></h3>
-                    <h6>Lieu: <%= meeting.place.name %></h6>
-                    <h6>Date: <%= meeting.date %></h6>
+                    <h6> <%= meeting.place.name %></h6>
+                    <h6> <%= l(meeting.date, format: "%d/%m/%Y") %></h6>
                 </div>
             </div>
             <% end %>
@@ -55,8 +55,8 @@
                 <% end %>
                 <div class='card-infos'>
                     <h3><%= meeting.second_dog.name %></h3>
-                    <h6>Lieu: <%= meeting.place.name %></h6>
-                    <h6>Date: <%= meeting.date %></h6>
+                    <h6> <%= meeting.place.name %></h6>
+                    <h6> <%= l(meeting.date, format: "%d/%m/%Y") %></h6>
                 </div>
             </div>
             <% end %>
