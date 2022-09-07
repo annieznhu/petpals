@@ -1,20 +1,18 @@
-.button-map {
+.ajouter-lieu {
   border-radius: 6px;
   background-color: $pink;
   z-index: 9000;
   position: fixed;
   right: 33px;
   bottom: 136px;
-}
-
-.button-map a {
   color: white;
   display: block;
   text-decoration: none;
-  border-color: 1px solid black;
   padding: 8px 16px;
   font-size: 16px;
+  border: none;
 }
+
 
 .mapboxgl-popup {
   max-width: 200px;
@@ -24,14 +22,21 @@
 .mapboxgl-map .mapboxgl-popup-content {
   text-align: center;
   font-family: "Open Sans", sans-serif;
-  border-radius: 26px;
+  border-radius: 18px;
+  overflow: hidden;
+  padding: 0;
+  .park-image {
+    width: 100%;
+    object-fit: cover;
+  }
+  .window-info {
+    padding: 15px;
+  }
 
 }
 
 button.mapboxgl-popup-close-button {
-  background-color: white;
-  right: 11px;
-  border-radius: 50%;
+display: none;
 }
 
 .mapboxgl-map .mapboxgl-ctrl-geocoder--icon-search {
@@ -51,4 +56,8 @@ button.mapboxgl-popup-close-button {
 
 .mapboxgl-map .mapboxgl-ctrl-geocoder--input {
   padding: 6px 55px;
+}
+
+.modal-title {
+  font-family: $body-font;
 }

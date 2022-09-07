@@ -1,5 +1,5 @@
 <div class="navbar fixed-bottom">
-  <%= link_to dogs_path, class: "navbar-item #{ 'active' if current_page?(dogs_path) }" do %>
+  <%= link_to dogs_path, class: "navbar-item #{ 'active' if params[:controller] == "dogs" }" do %>
     <%= image_tag('search.svg', class:"explorer-item") %>
     <p>Explorer</p>
   <% end %>
