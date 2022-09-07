@@ -1,8 +1,9 @@
-<div id="title-index">
-  <h1>petpals 🐾</h1>
+<div data-controller="header">
+<div id="title-index" data-header-target="title">
+  <h1>petpals</h1>
 </div>
 <%= render "shared/search_bar" %>
-<div class="index-cards-dogs">
+<div class="index-cards-dogs" data-header-target="index">
   <% @dogs.each do |dog| %>
     <%= link_to dog_path(dog) do %>
       <div class="index-card-dog">
@@ -46,7 +47,7 @@
               <h2><strong><%= dog.name %></strong></h2>
             </div>
             <div>
-              <h5><i class="fa-solid fa-location-dot" style="color: $dog-gray"></i>
+              <h5><%#= image_tag "pin.svg", class: "pin" %>
                 à <%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [dog.latitude, dog.longitude]).round(1) %>
                 km d'ici</h5>
             </div>
@@ -61,4 +62,5 @@
       </div>
     <% end %>
   <% end %>
+</div>
 </div>
