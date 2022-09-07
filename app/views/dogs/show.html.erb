@@ -59,7 +59,7 @@
   </div>
 </div>
 <div class='like_swap'>
-  <%= link_to dog_path(@dog.id-1) do %>
+  <%= link_to dog_path(@previous_dog) do %>
     <i class="fa-solid fa-chevron-left chevron "></i>
   <% end %>
   <div data-controller="like-button">
@@ -67,7 +67,7 @@
       <i class="fa-solid fa-paw <%= @dog.users.include?(current_user) ? "likedpaw" : "btnpaw" %>" data-like-button-target="icon" data-action="click->like-button#like" id='pawpaw'></i>
     <% end %>
   </div>
-  <%= link_to dog_path(@dog.id+1) do %>
+  <%= link_to dog_path(@next_dog) do %>
     <i class="fa-solid fa-chevron-right chevron"></i>
   <% end %>
 </div>
