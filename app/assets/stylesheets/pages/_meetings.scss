@@ -3,8 +3,12 @@
 }
 
 .title-meetings-index {
-    font-size: larger;
+    font-weight: 600;
     font-family: $headers-font;
+    padding: 0px;
+    padding-top: 15px;
+    padding-left: 15px;
+    margin: 0;
 }
 
 .time-container {
@@ -16,16 +20,16 @@
 .card-meeting {
     display: flex;
     justify-content: flex-start;
-    padding: 20px;
+    margin: 10px;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
+    background-color: #F3F1FF;
+    border-radius: 15px;
 
     card-infos {
         display: flex;
         flex-direction: column;
     }
-
-    
 }
-
 
 .dog-image {
     height: 100px;
@@ -39,6 +43,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding-left: 20px;
+    justify-content: space-evenly;
 
     h3 {
         font-family: $body-font;
