@@ -1,22 +1,49 @@
 .navbar {
   justify-content: space-around;
-  background: white;
+  background: $purple;
   padding: 10px 0;
   .navbar-item {
-    color: #747474;
+    color: rgb(213, 142, 142);
     text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    i {
-      font-size: 1.7rem;
-      margin-bottom: 0.5rem;
-    }
+
+    // .style_image {
+    //   font-size: 1.7rem;
+    //   margin-bottom: 0.5rem;
+    // }
     p {
+      color: white;
       margin-bottom: 0;
+      font-size: 13px;
     }
     &.active {
-      color: #EFB05F;
+      color:$dark-blue;
+      .map-item {
+        content:url('map-black.svg')
+      }
+      .guide-dog-item {
+        content:url('guide-dog-black.svg')
+      }
+      .heart-message-item {
+        content:url('heart-message-black.svg')
+      }
+      .explorer-item {
+        content:url('search-black.svg')
+      }
+      p {
+        color: black;
+      }
     }
   }
+}
+
+.map-item, .explorer-item, .heart-message-item, .guide-dog-item {
+  height: 40px;
+}
+
+.navbar-item .avatar {
+  border: 3px solid #FFFFFF;
+  object-fit: cover;
 }

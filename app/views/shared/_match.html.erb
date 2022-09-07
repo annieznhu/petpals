@@ -1,6 +1,6 @@
 <% if flash[:match] && current_user %>
 
-  <div class="alert alert-info alert-match alert-dismissible fade show m-1" role="alert">
+  <div class="alert alert-info alert-match alert-dismissible fade show " role="alert">
     <div class="modal-content">
      <h1> Pawfect ! <br>C'est un match !</h1>
     </div>
@@ -16,7 +16,6 @@
       <h1 class="name"><%= match.dog.name %></h1>
       </div>
     </div>
-
       <%= link_to "Contacter mon maître", match_path(match), class: "button" %>
     </div>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
