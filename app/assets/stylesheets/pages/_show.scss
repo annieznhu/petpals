@@ -101,6 +101,7 @@ ul {
     justify-content: space-around;
     padding-left: 30px;
     padding-right: 30px;
+    padding-bottom: 15px;
     align-items: center;
     position: absolute;
     bottom: 79px;
@@ -115,7 +116,7 @@ ul {
 
 #pawpaw {
     background-color: transparent;
-    color: rgb(185, 185, 185);
+    color: rgb(185, 185, 185) !important;
     z-index: 100;
     font-size: 70px;
   }
