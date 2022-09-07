@@ -33,9 +33,10 @@ ul {
  .dog_infos {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid $dog-gray;
+    // border-bottom: 1px solid $dog-gray;
     margin-left: 15px;
     margin-right: 15px;
+    font-family: $body-font;
 
     h5 {
         color: $dog-gray;
