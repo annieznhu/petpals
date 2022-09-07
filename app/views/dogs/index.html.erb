@@ -1,3 +1,6 @@
+<div id="title-index">
+  <h1>petpals 🐾</h1>
+</div>
 <%= render "shared/search_bar" %>
 <div class="index-cards-dogs">
   <% @dogs.each do |dog| %>
@@ -33,27 +36,29 @@
           </div>
           <div data-controller="like-button">
             <%= link_to dog_likes_path(dog), data: {turbo_method: :post} do %>
-              <i class="fa-solid fa-paw paw <%= dog.users.include?(current_user) ? "likedpaw" : "btnpaw" %>" data-like-button-target="icon" data-action="click->like-button#like" ></i>
+              <i class="paw fa-solid fa-heart <%= dog.users.include?(current_user) ? "likedpaw" : "btnpaw" %>" data-like-button-target="icon" data-action="click->like-button#like" ></i>
             <% end %>
           </div>
         </div>
-        <div class="index-card-bottom">
-          <div class="index-card-left">
-            <ul style="list-style: none">
-              <li><h2><strong><%= dog.name %></strong></h2></li>
-              <li><h5><%= pluralize(dog.age, "an") %></h5></li>
-              <li><h5><%= dog.temper %></h5></li>
-            </ul>
+        <div class="index-card-bottom text-ellipsis">
+          <div class="index-card-bottom-1">
+            <div>
+              <h2><strong><%= dog.name %></strong></h2>
+            </div>
+            <div>
+              <h5><i class="fa-solid fa-location-dot" style="color: $dog-gray"></i>
+                à <%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [dog.latitude, dog.longitude]).round(1) %>
+                km d'ici</h5>
+            </div>
           </div>
-          <div class="index-card-right">
-            <h5><i class="fa-solid fa-location-dot" style="color: $dog-gray"></i>
-            <%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [dog.latitude, dog.longitude]).round(1) %>
-            km d'ici</h5>
+          <div class="index-card-bottom-2">
+            <p><%= dog.description %></p>
+          </div>
+          <div>
+            <h4><%= pluralize(dog.age, "an") %> | <%= dog.species %> | <%= dog.temper %></h4>
           </div>
         </div>
       </div>
     <% end %>
   <% end %>
-
-
 </div>

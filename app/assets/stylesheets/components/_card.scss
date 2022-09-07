@@ -1,5 +1,18 @@
+#title-index {
+  h1 {
+    font-family: $title-font;
+    color: $pink;
+    padding: 20px;
+    font-size: 40px;
+    margin: 0;
+  }
+  display: flex;
+  justify-content: center;
+}
+
 .index-cards-dogs {
   display: grid;
+  gap: 10px;
   grid-template-columns: 1fr;
   height: calc(100vh - 80px - 80px);
   overflow: scroll;
@@ -18,25 +31,38 @@ a {
 }
 
 .index-card-dog {
-  background-color: transparent;
-  border: none;
-  padding: 10px;
+  background-color: #F3F1FF;
   position: relative;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
 
+  p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 
   h2 {
     color: black;
-    font-family: "Fredoka One";
-    font-weight: 700;
-    font-size: 18px;
+    font-family: $body-font;
+    font-size: 25px;
     margin-bottom: 2px;
   }
 
-  h5 {
-    color: $dog-gray;
-    font-family: "Concert One";
+  h4 {
+    color: black;
+    font-family: $body-font;
     font-size: 16px;
     margin: 0px;
+  }
+
+  h5 {
+    color: $pink;
+    font-family: $body-font;
+    font-size: 16px;
+    margin: 0px;
+    font-weight: 300;
   }
 
   ul {
@@ -45,43 +71,49 @@ a {
 
   img {
     aspect-ratio: 1 / 1;
-    border-radius: 15px;
+    border-radius:10px 10px 0px 0px;
     object-fit: cover;
     width: 100%;
+    height: 230px;
+    object-position: 50% 30%;
   }
 
   .paw {
-    color: $white;
     font-size: 40px;
     position: absolute;
     right: 30px;
     top: 30px;
+    background-color: transparent;
   }
 
   .index-card-bottom {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 8px;
+    flex-direction: column;
+    margin: 20px;
 
-    .index-card-left {
-      margin-left: 12px;
+    .index-card-bottom-top {
+      display: flex;
     }
 
-    .index-card-right {
-      margin-right: 12px;
+    .index-card-bottom-1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 10px;
     }
 
+    .index-card-bottom-2 {
+      margin-bottom: 15px;
+      color: $dog-gray;
+    }
   }
 }
 
 .btnpaw {
-  background-color: transparent;
-  color: rgba(192, 192, 192, 0.493) !important;
+  color: white !important;
   z-index: 500;
 }
 
 .likedpaw{
-  background-color: transparent;
-  color: #EFB05F !important;
+  color: $pink !important;
 }
