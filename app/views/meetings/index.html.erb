@@ -10,7 +10,11 @@
                     <%= cl_image_tag meeting.dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
                 <% end %>
                 <div class='card-infos'>
+                    <% if meeting.dog == current_user.dog%>
                     <h3>Balade avec <%= meeting.second_dog.name %></h3>
+                    <% else %>
+                        <h3>Balade avec <%= meeting.dog.name %></h3>
+                    <% end %>
                     <h6>Lieu: <%= meeting.place.name %></h6>
                     <h6>Date: <%= meeting.date %></h6>
                 </div>
