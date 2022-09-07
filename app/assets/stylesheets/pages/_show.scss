@@ -33,37 +33,49 @@ ul {
  .dog_infos {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid $dog-gray;
+    // border-bottom: 1px solid $dog-gray;
     margin-left: 15px;
     margin-right: 15px;
-
-    h5 {
-        color: $dog-gray;
-    }
+    font-family: $body-font;
+    align-items: flex-start;
 
     h6 {
-        font-size: 15px;
         color: $dog-gray;
+        padding-left: 10px;
+        font-family: $body-font;
+        font-weight: normal
     }
-    .list {
-        display:flex;
-        align-items: flex-end;
+    
+    h2 {
+        font-weight: bold;
+    }
+}
+
+.location {
+    display: flex;
+    align-items: flex-end;
+    
+    h6 {
+        color: $pink;
     }
 }
 
 .description {
-    padding-bottom: 10px;
-    margin: 20px;
-    border-bottom: 1px solid $dog-gray;
+    
+    margin: 15px;
 
     h6 {
         font-family: $body-font;
+        padding-left: 10px;
         color: $dog-gray;
         font-weight: normal;
         line-height: 2;
     }
 }
 
+.tools h3 {
+    margin-left: 15px;
+}
 .toys {
     margin: 20px;
     display: flex;
@@ -71,11 +83,16 @@ ul {
 }
 
 .bubble {
+    display: flex;
     border: 1px solid black;
-    border-radius: 50px;
+    background-color: $pink;
+    border-radius: 5px;
     padding: 9px;
+    color: white;
     width: 120px;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .like_swap {

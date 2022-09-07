@@ -31,43 +31,43 @@
   <div id='all-infos'>
     <div class="dog_infos">
       <div class='list'>
-        <ul style='list-style: none; list-style-position: outside;'>
-          <li><h2><%= @dog.name %></h2></li>
-          <li><h5><%= pluralize(@dog.age, 'an')%></h5></li>
-          <li><h5><%= @dog.temper %></h5></li>
-        </ul>
+        <%# <ul style='list-style: none; list-style-position: outside;'> %>
+          <h2><%= @dog.name %></h2>
+          <h6><%= @dog.species %> | <%= pluralize(@dog.age, 'an')%> | <%= @dog.temper %></h6>
+        <%# </ul> %>
       </div>
-      <div class='list'>
-        <ul style='text-align: end; list-style: none;'>
-          <li><h6><%= @dog.species %></h6></li>
-          <li><h6><i class="fa-solid fa-location-dot" style="color: $dog-gray"></i>
+      <div class='location'>
+        <h6><i class="fa-solid fa-location-dot"></i>
             <%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [@dog.latitude, @dog.longitude]).round(1) %>
-            km d'ici</h6></li>
-        </ul>
+            km d'ici</h6>
       </div>
     </div>
     <div class='description'>
+      <h3>À propos de moi</h3>
       <h6><%= @dog.description %></h6>
     </div>
-    <div class='toys'>
-      <% @dog.toys.each do |toy| %>
-        <div class='bubble'>
-          <%= toy.downcase %>
-        </div>
-      <% end %>
+    <div class='tools'> 
+      <h3>Mes jouets préférés</h3>
+      <div class='toys'>
+        <% @dog.toys.each do |toy| %>
+          <div class='bubble'>
+            <%= toy.downcase %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
 <div class='like_swap'>
-  <%= link_to dog_path(@dog.id-1) do %>
-    <i class="fa-solid fa-chevron-left chevron "></i>
+  <%= link_to dog_path(@previous_dog) do %>
+    <i class="fa-regular fa-circle-left chevron"></i>
   <% end %>
   <div data-controller="like-button">
     <%= link_to dog_likes_path(@dog), data: {turbo_method: :post} do %>
-      <i class="fa-solid fa-paw <%= @dog.users.include?(current_user) ? "likedpaw" : "btnpaw" %>" data-like-button-target="icon" data-action="click->like-button#like" id='pawpaw'></i>
+      <i class="fa-solid fa-heart <%= @dog.users.include?(current_user) ? "likedpaw" : "btnpaw" %>" data-like-button-target="icon" data-action="click->like-button#like" id='pawpaw'></i>
     <% end %>
   </div>
-  <%= link_to dog_path(@dog.id+1) do %>
-    <i class="fa-solid fa-chevron-right chevron"></i>
+  <%= link_to dog_path(@next_dog) do %>
+    <i class="fa-regular fa-circle-right chevron"></i>
   <% end %>
 </div>
