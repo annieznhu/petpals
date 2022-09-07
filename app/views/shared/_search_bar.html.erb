@@ -3,8 +3,8 @@
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "Commencer une recherche"
+      placeholder: "Ville, caractère, race..."
     %>
-    <button class='button-search'><i class="fa-solid fa-magnifying-glass"></i></button>
+    <button class='button-search'><%= image_tag "search-icon.svg" %></button>
   <% end %>
 </div>
