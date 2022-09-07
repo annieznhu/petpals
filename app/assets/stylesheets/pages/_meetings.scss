@@ -1,7 +1,10 @@
+.main-container {
+    margin-bottom: 80px;
+}
+
 .title-meetings-index {
     font-size: larger;
-    background-color:rgb(185, 185, 185);
-    font-family: $title-font;
+    font-family: $headers-font;
 }
 
 .time-container {
@@ -36,5 +39,11 @@
     flex-direction: column;
     align-items: flex-start;
     padding-left: 20px;
+
+    h3 {
+        font-family: $body-font;
+        font-size: medium;
+        font-weight: bold;
+    }
 }
 
