@@ -1,11 +1,11 @@
 <div id="title-index">
-  <h1>petpals 🐾</h1>
+  <h1>petpals</h1>
 </div>
 <%= render "shared/search_bar" %>
-<div class="index-cards-dogs">
+<div class="index-cards-dogs" data-controller="header">
   <% @dogs.each do |dog| %>
-    <%= link_to dog_path(dog) do %>
-      <div class="index-card-dog">
+    <div class="index-card-dog">
+      <%= link_to dog_path(dog) do %>
         <div class="index-card-top">
           <div id="carouselExampleIndicators<%= dog.id %>" class="carousel slide" data-bs-ride="false">
             <div class="carousel-indicators">
@@ -36,7 +36,7 @@
           </div>
           <div data-controller="like-button">
             <%= link_to dog_likes_path(dog), data: {turbo_method: :post} do %>
-              <i class="paw fa-solid fa-heart <%= dog.users.include?(current_user) ? "likedpaw" : "btnpaw" %>" data-like-button-target="icon" data-action="click->like-button#like" ></i>
+              <i class="paw fa-solid fa-heart <%= dog.users.include?(current_user) ? "likedpaw" : "btnpaw-index" %>" data-like-button-target="icon" data-action="click->like-button#like"></i>
             <% end %>
           </div>
         </div>
@@ -46,7 +46,7 @@
               <h2><strong><%= dog.name %></strong></h2>
             </div>
             <div>
-              <h5><i class="fa-solid fa-location-dot" style="color: $dog-gray"></i>
+              <h5><%#= image_tag "pin.svg", class: "pin" %>
                 à <%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [dog.latitude, dog.longitude]).round(1) %>
                 km d'ici</h5>
             </div>
@@ -58,7 +58,7 @@
             <h4><%= pluralize(dog.age, "an") %> | <%= dog.species %> | <%= dog.temper %></h4>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   <% end %>
 </div>

@@ -27,6 +27,7 @@ ul {
       margin: 0;
       object-fit:cover;
       padding: 0;
+      object-position: 50% 30%;
     }
 }
 
@@ -45,7 +46,7 @@ ul {
         font-family: $body-font;
         font-weight: normal
     }
-    
+
     h2 {
         font-weight: bold;
     }
@@ -54,14 +55,14 @@ ul {
 .location {
     display: flex;
     align-items: flex-end;
-    
+
     h6 {
         color: $pink;
     }
 }
 
 .description {
-    
+
     margin: 15px;
 
     h6 {
@@ -116,7 +117,7 @@ ul {
 
 #pawpaw {
     background-color: transparent;
-    color: rgb(185, 185, 185) !important;
+    color: rgb(185, 185, 185);
     z-index: 100;
     font-size: 70px;
   }
@@ -124,7 +125,7 @@ ul {
 .likedpaw {
     background-color: transparent;
     color: $pink !important;
-    z-index: 100;
+    z-index: 500;
     font-size: 70px;
 }
 

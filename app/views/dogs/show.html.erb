@@ -46,7 +46,7 @@
       <h3>À propos de moi</h3>
       <h6><%= @dog.description %></h6>
     </div>
-    <div class='tools'> 
+    <div class='tools'>
       <h3>Mes jouets préférés</h3>
       <div class='toys'>
         <% @dog.toys.each do |toy| %>
@@ -64,7 +64,7 @@
   <% end %>
   <div data-controller="like-button">
     <%= link_to dog_likes_path(@dog), data: {turbo_method: :post} do %>
-      <i class="fa-solid fa-heart <%= @dog.users.include?(current_user) ? "likedpaw" : "btnpaw" %>" data-like-button-target="icon" data-action="click->like-button#like" id='pawpaw'></i>
+      <i class="fa-solid fa-heart <%= @dog.users.include?(current_user) ? "likedpaw" : "btnpaw-show" %>" data-like-button-target="icon" data-action="click->like-button#like" id="pawpaw"></i>
     <% end %>
   </div>
   <%= link_to dog_path(@next_dog) do %>
