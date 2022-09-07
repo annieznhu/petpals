@@ -20,25 +20,25 @@ puts "Creating users"
 
 user_0 = User.create!(first_name: 'Prétest', last_name: 'Nomtest', email: 'test@test.com', username: 'Testest', password: 'azerty', description: "J'adore tester des trucs dans la vie, surtout des applications de test ! Trop cool les tests, vraiment je suis méga fan des tests, c'est génial.")
 user_1 = User.create!(first_name: 'Charles', last_name: 'Sanse', email: 'charles.sanse@mail.com', username: 'CharlesSanse', password: 'azerty', description: 'J’ai grandi avec des animaux, j’adore les chiens.')
-user_2 = User.create!(first_name: 'Anthony', last_name: 'Plisson', email: 'anthony.plisson@laposte.net', username: 'AntoP', password: 'azerty', description: 'J’ai Sirius depuis 3 ans, maintenant, il est la star du parc')
-user_3 = User.create!(first_name: 'Nadia', last_name: 'Fluck', email: 'nadia-fluck@yahoo.fr', username: 'NadiaFluuuck', password: 'azerty', description: 'Je viens d’emménager dans le quartier avec Izy, je lui cherche des amis')
+user_2 = User.create!(first_name: 'Anthony', last_name: 'Plisson', email: 'anthony.plisson@laposte.net', username: 'Anto.P', password: 'azerty', description: 'J’ai Majax depuis 3 ans, maintenant, il est la star du parc')
+user_3 = User.create!(first_name: 'Nadia', last_name: 'Fluck', email: 'nadia-fluck@yahoo.fr', username: 'NadiaFluck', password: 'azerty', description: 'Je viens d’emménager dans le quartier avec Izy, je lui cherche des amis')
 user_4 = User.create!(first_name: 'Julia', last_name: 'Martinez', email: 'julia.martinez@gmail.com', username: 'JujuTravel', password: 'azerty', description: 'Il a un gros ventre comme son maître... du coup j’essaie de le faire bouger')
 user_5 = User.create!(first_name: 'Déborah', last_name: 'Brignon', email: 'debobo@gmail.com', username: 'Debobo', password: 'azerty', description: 'Je ne connais pas du tout le quartier !')
 user_6 = User.create!(first_name: 'Mélinda ', last_name: 'Kieboom', email: 'melinda-kieboom@hotmail.fr', username: 'Méli01', password: 'azerty', description: 'J’ai 1 chien et 6 chats, je veux lui faire plein d’amis.')
-user_7 = User.create!(first_name: 'Manon', last_name: 'Ingrassi', email: 'manon.ingrassi@gmail.com', username: 'ManoMano', password: 'azerty', description: 'Je connais plein de coins sympas, mais Tofu s’ennuie tout seul.')
-user_8 = User.create!(first_name: 'Didier', last_name: 'Plantard', email: 'didierplantard@yahoo.fr', username: 'LaMachine', password: 'azerty', description: 'J’adore la bidoche, et Lucky aussi !')
-user_9 = User.create!(first_name: 'Thibault', last_name: 'Romarin', email: 'hdp@icloud.com', username: 'HDP', password: 'azerty', description: 'Advienne que pourra.')
-user_10 = User.create!(first_name: 'Marie-Julie', last_name: 'Cotta', email: 'marie-julie.cotta@hotmail.fr', username: 'Pipou', password: 'azerty', description: 'J’ai peur des gros chiens, et Stormy les attaque à vue.')
-user_11 = User.create!(first_name: 'Michael ', last_name: 'Scott', email: 'michael-scott@wanadoo.fr', username: 'TheManager', password: 'azerty', description: 'Je suis très occupé par mon travail, mais je trouve toujours du temps pour Souna !')
-user_12 = User.create!(first_name: 'Dwight', last_name: 'Schrute', email: 'dwight.schrute@gmail.com', username: 'AssistantRegionalManager', password: 'azerty', description: 'J’apprends à mon Labrador tout ce qu’il doit savoir pour survivre dans la nature.')
-user_13 = User.create!(first_name: 'Kevin', last_name: 'Malone', email: 'kmalone@scranton.com', username: 'ChiliGuy', password: 'azerty', description: 'Tsouky ne veux plus jouer à la balle. Je lui cherche un ami pour sortir.')
-user_14 = User.create!(first_name: 'Angela', last_name: 'Martin ', email: 'angela.martin@yahoo.fr', username: 'Kitty', password: 'azerty', description: 'Papi n’est pas un Bulldog comme les autres, on adore se faire belles ensemble.')
+user_7 = User.create!(first_name: 'Jordan', last_name: 'Gangloff', email: 'jga@gmail.com', username: 'Jordan.G', password: 'azerty', description: 'Je connais plein de coins sympas, mais Tofu s’ennuie tout seul.')
+user_8 = User.create!(first_name: 'Didier', last_name: 'Plantard', email: 'didierplantard@yahoo.fr', username: 'Dédé', password: 'azerty', description: 'J’adore la bidoche, et Lucky aussi !')
+user_9 = User.create!(first_name: 'Thibault', last_name: 'Romarin', email: 'hdp@icloud.com', username: 'ThibRomarin', password: 'azerty', description: 'Advienne que pourra.')
+user_10 = User.create!(first_name: 'Marie-Julie', last_name: 'Cotta', email: 'marie-julie.cotta@hotmail.fr', username: 'M-J.Cotta', password: 'azerty', description: 'J’ai peur des gros chiens, et Stormy les attaque à vue.')
+user_11 = User.create!(first_name: 'Michael ', last_name: 'Scott', email: 'michael-scott@wanadoo.fr', username: 'M.Scott', password: 'azerty', description: 'Je suis très occupé par mon travail, mais je trouve toujours du temps pour Souna !')
+user_12 = User.create!(first_name: 'Dwight', last_name: 'Schrute', email: 'dwight.schrute@gmail.com', username: 'Dwight.K', password: 'azerty', description: 'J’apprends à mon Labrador tout ce qu’il doit savoir pour survivre dans la nature.')
+user_13 = User.create!(first_name: 'Kevin', last_name: 'Malone', email: 'kmalone@scranton.com', username: 'Kev78', password: 'azerty', description: 'Tsouky ne veux plus jouer à la balle. Je lui cherche un ami pour sortir.')
+user_14 = User.create!(first_name: 'Angela', last_name: 'Martin ', email: 'angela.martin@yahoo.fr', username: 'Angelaaa', password: 'azerty', description: 'Papi n’est pas un Bulldog comme les autres, on adore se faire belles ensemble.')
 user_15 = User.create!(first_name: 'Jannette', last_name: 'Levingston', email: 'jan.levingston@gmail.com', username: 'Janny', password: 'azerty', description: 'Maurice et moi sommes très difficiles sur les choix de nos partenaires.')
 user_16 = User.create!(first_name: 'Jean', last_name: 'Neymar', email: 'neyney@psg.fr', username: 'JenNey', password: 'azerty', description: 'Rex m’aide lors de mes sorties jogging, il me permet de me surpasser !')
 user_17 = User.create!(first_name: 'Christophe', last_name: 'Devachane', email: 'devach@tf1.fr', username: 'Dechav', password: 'azerty', description: 'J’ai besoin d’aide pour calmer mon chien, il a bien plus d’énergie que moi...')
 user_18 = User.create!(first_name: 'Lara', last_name: 'Croft', email: 'crofty@gmx.com', username: 'Crofty', password: 'azerty', description: 'Je suis nouvelle dans ces terres, j’ai vraiment hâte de découvrir les environs avec mon compagnon.')
-user_19 = User.create!(first_name: 'Hermione', last_name: 'Grange', email: 'wingardium@leviosa.aaa', username: 'RonMorron', password: 'azerty', description: 'Mon chien m’aide à me défendre contre les détraqueurs et les mangemorts.')
-user_20 = User.create!(first_name: 'Jeanne', last_name: 'Marc', email: 'brulee@vive.fr', username: 'Fire', password: 'azerty', description: 'Toujours chaude pour une balade !')
+user_19 = User.create!(first_name: 'Marie', last_name: 'Grange', email: 'wingardium@leviosa.aaa', username: 'Marie_93', password: 'azerty', description: 'Mon chien m’aide à me défendre contre les détraqueurs et les mangemorts.')
+user_20 = User.create!(first_name: 'Jeanne', last_name: 'Marc', email: 'brulee@vive.fr', username: 'Jeanne.M', password: 'azerty', description: 'Toujours chaude pour une balade !')
 
 puts "Creating dogs"
 
@@ -61,8 +61,8 @@ dog_15 = Dog.create!(user: user_15, name: 'Maurice', age: '8', species: 'Yorkshi
 dog_16 = Dog.create!(user: user_16, name: 'Rex', age: '7', species: 'Berger Allemand', temper: 'Indépendant', address: '81bis Rue de la Fontaine au Roi, 75011 Paris', description: 'Une boule de muscles, fort comme un lion, rapide comme un guépard, la vue d’un faucon et l’endurance d’un éléphant ; mais nage comme une enclume', toys: ['Bâtons', 'Haltères'])
 dog_17 = Dog.create!(user: user_17, name: 'Marvin', age: '5', species: 'Labrador', temper: 'Agressif', address: '19 Rue de la Solidarité, 75019 Paris', description: 'J’habite actuellement chez mon chien. C’est lui le chef de famille.', toys: ['Chaussures', 'Balles'])
 dog_18 = Dog.create!(user: user_18, name: 'Zoro', age: '3', species: 'Chihuahua', temper: 'Craintif', address: '12 Rue Buot, 75013 Paris', description: 'Zoro est un peu peureux, mais il adore découvir de nouveaux paysages !', toys: ['Balle, Bâtons'])
-dog_19 = Dog.create!(user: user_19, name: 'Benji', age: '6', species: 'Caniche', temper: 'Joueur', address: '36 Rue Eugène Oudiné, 75013 Paris', description: 'Maitrise les sorts de niveau 1 à 3, niveau 4 en défense contre les forces du mal, maitrise parfaitement le balai. Un peu de mal en potion...', toys: ['Balle', 'Baguette magique'])
-dog_20 = Dog.create!(user: user_20, name: 'Serge', age: '12', species: 'Pitbull', temper: 'Craintif', address: '5 Rue de Metz, 75010 Paris', description: 'Il adore les Hotdogs', toys: ['Bâtons', 'Épée'])
+dog_19 = Dog.create!(user: user_19, name: 'Benji', age: '6', species: 'Caniche', temper: 'Joueur', address: '36 Rue Eugène Oudiné, 75013 Paris', description: "Il adore courir dehors après tout ce qui passe, ballons, oiseaux, voitures, RER... Il a beaucoup d'énergie à revendre.", toys: ['Balle', 'Corde'])
+dog_20 = Dog.create!(user: user_20, name: 'Serge', age: '12', species: 'Pitbull', temper: 'Craintif', address: '5 Rue de Metz, 75010 Paris', description: 'Il adore les Hotdogs ', toys: ['Bâtons', 'Épée'])
 
 puts "Creating places"
 
@@ -99,6 +99,7 @@ puts "Creating likes"
 
 like_1 = Like.create!(user: user_5, dog: dog_7)
 like_2 = Like.create!(user: user_2, dog: dog_7)
+like_1 = Like.create!(user: user_16, dog: dog_7)
 like_3 = Like.create!(user: user_7, dog: dog_4)
 like_4 = Like.create!(user: user_7, dog: dog_9)
 like_5 = Like.create!(user: user_7, dog: dog_11)
@@ -117,10 +118,10 @@ meeting_4 = Meeting.create!(place: place_2, date: "2022-07-31", dog: dog_7, seco
 
 
 
-meeting_6 = Meeting.create!(place: place_2, date: "2025-02-21", dog: dog_7, second_dog: dog_9)
-meeting_7 = Meeting.create!(place: place_2, date: "2026-07-05", dog: dog_7, second_dog: dog_19)
-meeting_8 = Meeting.create!(place: place_2, date: "2026-01-21", dog: dog_7, second_dog: dog_4)
-meeting_9 = Meeting.create!(place: place_2, date: "2031-11-30", dog: dog_7, second_dog: dog_12)
+meeting_6 = Meeting.create!(place: place_2, date: "2022-09-10", dog: dog_7, second_dog: dog_9)
+meeting_7 = Meeting.create!(place: place_2, date: "2022-09-12", dog: dog_7, second_dog: dog_19)
+meeting_8 = Meeting.create!(place: place_2, date: "2022-09-18", dog: dog_7, second_dog: dog_4)
+meeting_9 = Meeting.create!(place: place_2, date: "2022-09-19", dog: dog_7, second_dog: dog_12)
 
 puts "Adding photos"
 

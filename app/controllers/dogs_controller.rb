@@ -11,10 +11,9 @@ class DogsController < ApplicationController
 
   def show
     dogs = Dog.where.not(user: current_user)
-    @dogs = []
-    dogs.each do |dog|
-      @dogs << dog
-    end
+    dog_index = dogs.index(@dog)
+    @previous_dog = dogs[dog_index - 1]
+    @next_dog = dogs[dog_index + 1] || dogs.first
   end
 
   private
