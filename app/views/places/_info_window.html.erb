@@ -1,8 +1,8 @@
 <div class="window">
   <% if place.photo.key %>
-    <%= cl_image_tag place.photo.key, width: 200, height: 200, crop: :fill, class: "park-image"%>
+    <%= cl_image_tag place.photo.key, width: 250, height: 150, crop: :fill, class: "park-image"%>
   <% end %>
-  <div>
+  <div class="window-info">
     <h2><%= place.name %></h2>
     <p><%= place.address %></p>
   </div>

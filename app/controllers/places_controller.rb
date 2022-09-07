@@ -1,6 +1,7 @@
 class PlacesController < ApplicationController
   def index
     @places = Place.all
+    @place = Place.new
     @markers = @places.geocoded.map do |place|
       {
         lat: place.latitude,
@@ -9,10 +10,6 @@ class PlacesController < ApplicationController
         image_url: helpers.asset_url("pink-park.png")
       }
     end
-  end
-
-  def new
-    @place = Place.new
   end
 
   def create
