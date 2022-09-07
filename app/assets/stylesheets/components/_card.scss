@@ -122,11 +122,12 @@ a {
   }
 }
 
-.btnpaw {
-  color: white !important;
+.btnpaw-show {
+  color: rgb(185, 185, 185);
   z-index: 500;
 }
 
-.likedpaw{
-  color: $pink !important;
+.btnpaw-index {
+  color: white;
+  z-index: 500;
 }
