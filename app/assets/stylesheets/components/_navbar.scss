@@ -1,7 +1,8 @@
 .navbar {
   justify-content: space-around;
   background: $purple;
-  padding: 10px 0;
+  padding: 10px 0px 20px 0px;
+
   .navbar-item {
     color: rgb(213, 142, 142);
     text-decoration: none;
@@ -52,6 +53,4 @@
   transform: translateY(-63px);
 }
 
-#title-index {
 
-}

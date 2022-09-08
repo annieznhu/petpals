@@ -12,18 +12,18 @@
     border-bottom: 1px solid $gray-200;
     align-items: center;
   }
-
+  
   .avatar {
-
+    
     width: 50px;
     height: 50px;
     margin: 5px 10px 5px 0;
     border-radius: 50%;
     border-color: 1px solid black;
   }
-
+  
   h1 {
-
+    font-family: $headers-font;
     margin-bottom: 0;
     padding: 1rem;
     align-self: flex-start;
