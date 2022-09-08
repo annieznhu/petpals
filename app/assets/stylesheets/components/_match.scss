@@ -23,7 +23,7 @@
   }
 
   h1 {
-
+    font-family: $body-font;
     margin-bottom: 0;
     padding: 1rem;
     align-self: flex-start;
@@ -41,28 +41,38 @@
     border-top: 1px solid $gray-200;
     border-bottom: 1px solid $gray-200;
     padding: 1rem;
+    padding-bottom: 0;
 
     .form-group {
       margin-bottom: 0;
     }
   }
 
-  .icon-calender {
-
-    color: #81b3bc;
+  button.icon-calender {
+    border: none;
     font-size: 2rem;
-    margin: 16px 20px 30px 20px;
+    background-color: transparent;
+    margin-bottom: 1rem;
+    padding: 0px 16px 0px 0px;
+
   }
 
   .icon {
     border: none;
     background: none;
-    color: #a8cdef;
+    color: $pink;
     text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: left;
     font-size: 2rem;
     margin-bottom: 0.5rem;
+    position: absolute;
+    right: 34px;
+    bottom: 94px;
   }
+}
+.padding-input {
+  padding-right: 47px;
+  height: 55px;
 }

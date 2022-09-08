@@ -1,12 +1,13 @@
 <div data-controller="modal-blur">
   <div style="width: 100vw; height: 100vh;"
+    data-action="click->modal-blur#clear"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
     data-modal-blur-target="map">
   </div>
     <div class="button-map">
-  <button type="button" class="ajouter-lieu" data-bs-toggle="modal" data-bs-target="#exampleModal" data-action="click->modal-blur#blur" >
+  <button type="button" class="ajouter-lieu" data-bs-toggle="modal" data-bs-target="#exampleModal" data-action="click->modal-blur#blur" data-modal-blur-target="button">
     Ajouter un lieu
   </button>
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
