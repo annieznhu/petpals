@@ -1,39 +1,12 @@
-<div class="banner">
-    <h1 class='title'><strong>petpals</strong></h1>
-    <h2>Woof woof doggy, une application qui va changer la vie de votre chien !<br>
-    Yey on adore ❤️</h2>
-    <%= link_to "Voir tous les chiens", dogs_path, class: "button" %>
-</div>
-
-<div class='cards'>
-  <div class="card">
-  <%=image_tag('pink_dog.png') %>
-  <p>Rencontrez des chiens compatibles avec le votre</p>
+<div class="wrapper">
+  <div class="scaled-wrapper">
+    <div class="circle">
+      <p class="element" style="font-size: 30px" id="a">🐶</p>
+      <p class="element" style="font-size: 30px" id="b">💕</p>
+      <p class="element" style="font-size: 30px" id="c">🌳</p>
+      <p class="element" style="font-size: 30px" id="d">👥</p>
+      <p class="element" style="font-size: 30px" id="e">🐕</p>
+    </div>
+    <p id="caption"></p>
   </div>
-
-  <div class="card">
-  <%= image_tag('emoji-heart-eyes.png') %>
-  <p>Partagez votre amour pour les animaux</p>
-  </div>
-
-  <div class="card">
-  <%= image_tag('tree.png') %>
-  <p>Trouvez les meilleurs lieux de balades</p>
-  </div>
-
-  <div class="card">
-  <%= image_tag('people.png') %>
-  <p>Découvrez une communauté de passionnés</p>
-  </div>
-</div>
-
-<div class="wrapper-home">
-  <div class="circle">
-    <p class="element" id="a" style="font-size: 50px">🐶</p>
-    <p class="element" id="b" style="font-size: 50px">💕</p>
-    <p class="element" id="c" style="font-size: 50px">🌳</p>
-    <p class="element" id="d" style="font-size: 50px">👥</p>
-    <p class="element" id="e" style="font-size: 50px">🐕</p>
-  </div>
-  <p id="caption" class="text-center" style="font-size: 20px"></p>
 </div>
