@@ -1,18 +1,21 @@
 
 .message-current-user {
-  background-color: #a5d2da;
+  background-color: $pink;
+  color: white;
   border-radius: 20px;
-  width: 200px;
+  width: 250px;
   margin: 0 15px 15px 0;
   padding: 10px;
   align-self: flex-end;
+  word-break: break-word;
 }
 
 .message-other-user {
-  background-color:  #a8cdef;
+  background-color: $light-gray;
   border-radius: 20px;
-  width: 200px;
+  width: 250px;
   margin: 0 15px 15px 0;
   padding: 10px;
   align-self: flex-start;
+  word-break: break-word;
 }

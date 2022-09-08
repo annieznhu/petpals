@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="meeting-modal"
 export default class extends Controller {
-  static targets = ['form', 'content', 'close']
+  static targets = ['form', 'content', 'close', 'hiddenMessage']
   static values = { matchId: Number }
 
   connect() {
@@ -26,6 +26,7 @@ export default class extends Controller {
         }
         this.contentTarget.outerHTML = data.html
         this.closeTarget.click();
+        this.hiddenMessageTarget.classList.add("meeting-created")
       })
   }
 }

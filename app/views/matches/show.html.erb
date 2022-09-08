@@ -19,20 +19,26 @@
     <% end %>
   </div>
   <%= simple_form_for [@match, @message], html: { data: { action: "turbo:submit-end->match-subscription#resetForm" }, class: "d-flex align-items-center" } do |f| %>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <i class="fa-regular fa-calendar-plus"></i>
+    <button type="button" class="icon-calender" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <%= image_tag('pink-calender.svg') %>
     </button>
-    <%= f.input :content, label: false, placeholder: "Dis quelque chose", wrapper_html: {class: "flex-grow-1"} %>
-    <%= button_tag class: "icon" do %>
+    <%= f.input :content, label: false, placeholder: "Dis quelque chose", wrapper_html: {class: "flex-grow-1"}, input_html: {class: "padding-input"}%>
+
+   <button type="submit" class= "icon">
       <i class="fa-regular fa-paper-plane"></i>
-    <% end %>
+  </button>
   <% end %>
 </div>
 
-<div data-controller="meeting-modal" data-meeting-modal-match-id-value="<%= @match.id %>">
+<div class="meeting-modal-parent" data-controller="meeting-modal" data-meeting-modal-match-id-value="<%= @match.id %>">
   <div class="modal fade" id="exampleModal" taindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <%= render "meeting_modal", match: @match, meeting: @meeting %>
     </div>
   </div>
+  <div data-meeting-modal-target="hiddenMessage">
+    <span>Balade planifiée !</span>
+  </div>
 </div>
+
+<% content_for :meta_title, "Discussion avec #{@match.second_dog.name}" %>
