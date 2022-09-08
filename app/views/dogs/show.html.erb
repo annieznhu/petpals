@@ -31,10 +31,8 @@
   <div id='all-infos'>
     <div class="dog_infos">
       <div class='list'>
-        <%# <ul style='list-style: none; list-style-position: outside;'> %>
           <h2><%= @dog.name %></h2>
           <h6><%= @dog.species %> | <%= pluralize(@dog.age, 'an')%> | <%= @dog.temper %></h6>
-        <%# </ul> %>
       </div>
       <div class='location'>
         <h6><i class="fa-solid fa-location-dot"></i>
@@ -71,3 +69,10 @@
     <i class="fa-regular fa-circle-right chevron"></i>
   <% end %>
 </div>
+
+
+
+<% content_for :meta_title, "#{@dog.name} est sur #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @dog.description %>
+<%# content_for :meta_image, cl_image_tag photo.key, crop: :fill %>
+<%# cl_image_path(@dog.photo.key) %>
