@@ -61,3 +61,23 @@ display: none;
 .modal-title {
   font-family: $body-font;
 }
+
+.modal {
+  --bs-modal-header-border-color: transparent;
+  --bs-modal-footer-border-color: transparent;
+  width: 80vw;
+  left: 10vw;
+  top: 40px;
+}
+
+.form-control, .mapboxgl-ctrl-geocoder--input {
+  border: 1px solid $pink !important;
+}
+
+.modal-blur {
+  filter: blur(3px);
+}
+
+.modal-header {
+  padding: 10px 20px;
+}

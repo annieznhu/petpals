@@ -27,3 +27,6 @@ application.register("match-subscription", MatchSubscriptionController)
 
 import MeetingModalController from "./meeting_modal_controller"
 application.register("meeting-modal", MeetingModalController)
+
+import ModalBlurController from "./modal_blur_controller"
+application.register("modal-blur", ModalBlurController)
