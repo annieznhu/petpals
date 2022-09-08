@@ -1,33 +1,36 @@
-<div style="width: 100vw; height: 100vh;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-  <div class="button-map">
-<button type="button" class="ajouter-lieu" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Ajouter un lieu
-</button>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Ajouter un lieu</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-        <%= simple_form_for(@place) do |f| %>
-      <div class="modal-body">
-          <%= f.input :name, label: "Nom du parc"%>
-          <%= f.input :address, label: "Adresse", input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
-    wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
-  %>
-          <%= f.input :photo%>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-          <%= f.submit "Ajouter", class:"btn btn-primary text-white" %>
-      </div>
-        <% end %>
+<div data-controller="modal-blur">
+  <div style="width: 100vw; height: 100vh;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-modal-blur-target="map">
+  </div>
+    <div class="button-map">
+  <button type="button" class="ajouter-lieu" data-bs-toggle="modal" data-bs-target="#exampleModal" data-action="click->modal-blur#blur" >
+    Ajouter un lieu
+  </button>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ajouter un lieu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" data-action="click->modal-blur#clear"></button>
+        </div>
+          <%= simple_form_for(@place) do |f| %>
+        <div class="modal-body">
+            <%= f.input :name, label: "Nom du parc"%>
+            <%= f.input :address, label: "Adresse", input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+      wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+    %>
+            <%= f.input :photo%>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-action="click->modal-blur#clear">Annuler</button>
+            <%= f.submit "Ajouter", class:"btn btn-primary text-white" %>
+        </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
+    </div>
 </div>
-  </div>
