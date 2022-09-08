@@ -1,7 +1,7 @@
 .ajouter-lieu {
   border-radius: 6px;
   background-color: $pink;
-  z-index: 9000;
+  z-index: 8000;
   position: fixed;
   right: 33px;
   bottom: 136px;
@@ -65,9 +65,11 @@ display: none;
 .modal {
   --bs-modal-header-border-color: transparent;
   --bs-modal-footer-border-color: transparent;
+  --bs-modal-zindex: 9000;
   width: 80vw;
   left: 10vw;
   top: 40px;
+
 }
 
 .form-control, .mapboxgl-ctrl-geocoder--input {
