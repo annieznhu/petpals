@@ -14,7 +14,7 @@
 .time-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;   
+    justify-content: space-between;
 }
 
 .card-meeting {
@@ -52,3 +52,41 @@
     }
 }
 
+.meeting-modal-parent {
+  position: relative;
+}
+
+// .meeting-created {
+//   position: absolute;
+//   bottom: 130px;
+//   left: 10px;
+//   padding: 5px;
+//   border-radius: 5px;
+//   background-color: $pink;
+//   color: white;
+//   font-family: $body-font;
+//   transition-duration: 1s;
+//   transition-property: left;
+// }
+
+.meeting-created {
+  position: absolute;
+  bottom: 130px;
+  left: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: $pink;
+  color: white;
+  font-family: $body-font;
+  -webkit-animation: fadeinout 6s linear forwards;
+  animation: fadeinout 6s linear forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeinout {
+  20%, 80% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  20%, 80% { opacity: 1; }
+}
