@@ -1,0 +1,5 @@
+meta_product_name: "Petpals"
+meta_title: "Petpals - The easiest way to improve your dog’s social life and meet new people"
+meta_description: "Rencontrez des chiens compatibles avec le votre, partagez votre amour pour votre animal, trouvez les meilleurs lieux de balades et découvrez une communauté de passionnés"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
