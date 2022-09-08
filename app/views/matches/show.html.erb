@@ -29,12 +29,15 @@
   <% end %>
 </div>
 
-<div data-controller="meeting-modal" data-meeting-modal-match-id-value="<%= @match.id %>">
+<div class="meeting-modal-parent" data-controller="meeting-modal" data-meeting-modal-match-id-value="<%= @match.id %>">
   <div class="modal fade" id="exampleModal" taindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <%= render "meeting_modal", match: @match, meeting: @meeting %>
     </div>
   </div>
+  <div data-meeting-modal-target="hiddenMessage">
+    <span>Balade planifiée !</span>
+  </div>
 </div>
 
-<% content_for :meta_title, "Discussion  avec #{@match.second_dog.name}" %>
+<% content_for :meta_title, "Discussion avec #{@match.second_dog.name}" %>

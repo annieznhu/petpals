@@ -15,14 +15,14 @@ class MeetingsController < ApplicationController
       render json: failure_response
     end
   end
-  
+
   def index
     # @meetings = current_user.dog.meetings
     @past_meetings = current_user.dog.meetings.send(:past)
     @today_meetings = current_user.dog.meetings.send(:today)
     @future_meetings = current_user.dog.meetings.send(:future)
   end
-  
+
 
   private
 
