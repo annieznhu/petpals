@@ -33,17 +33,21 @@
   color: white;
 }
 .button {
-  background-color: rgb(247, 182, 63);
+  background-color: $purple;
   border-radius: 20px;
-  border-color: rgb(247, 187, 76);
+  border-color: $purple;
   color: white;
   display: flex;
   text-decoration: none;
   text-align: center;
   width: 120px;
   padding: 20px;
+}
+
+.btn-home {
   position: absolute;
-  bottom: 90px;
+  bottom: 322px;
+  z-index: 100000;
 }
 
 .cards {
@@ -53,18 +57,19 @@
   margin: 20px 60px 100px 50px;
 
   .card {
-   align-items: center;
-   background-color: transparent;
-   border: none;
-   text-align: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    text-align: center;
 
-  img{
-    width: 50px;
-  }
+    img{
+      width: 50px;
+    }
   }
 }
 
 .wrapper {
+  z-index: 99999;
   position: relative;
   // transform: translate(0%, 0%);
   /* margin: 0 auto; */
