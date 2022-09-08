@@ -5,18 +5,18 @@
             <% @today_meetings.each do |meeting| %>
             <div class='card-meeting'>
                 <% if meeting.dog == current_user.dog%>
-                    <%= cl_image_tag meeting.second_dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
+                    <%= cl_image_tag meeting.second_dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "meeting-dog-image"%>
                 <% else %>
-                    <%= cl_image_tag meeting.dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
+                    <%= cl_image_tag meeting.dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "meeting-dog-image"%>
                 <% end %>
                 <div class='card-infos'>
                     <% if meeting.dog == current_user.dog%>
-                    <h3><%= meeting.second_dog.name %></h3>
+                    <h2><%= meeting.second_dog.name %></h2>
                     <% else %>
-                        <h3><%= meeting.dog.name %></h3>
+                        <h2><%= meeting.dog.name %></h2>
                     <% end %>
-                    <h6> <%= meeting.place.name %></h6>
-                    <h6> <%= l(meeting.date, format: "%d/%m/%Y") %></h6>
+                    <p> <%= meeting.place.name %></p>
+                    <p>Le <%= l(meeting.date, format: "%a %e %b") %></p>
                 </div>
             </div>
             <% end %>
@@ -29,14 +29,14 @@
             <% @future_meetings.each do |meeting| %>
             <div class='card-meeting'>
                 <% if meeting.dog == current_user.dog%>
-                    <%= cl_image_tag meeting.second_dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
+                    <%= cl_image_tag meeting.second_dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "meeting-dog-image"%>
                 <% else %>
-                    <%= cl_image_tag meeting.dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
+                    <%= cl_image_tag meeting.dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "meeting-dog-image"%>
                 <% end %>
                 <div class='card-infos'>
-                    <h3><%= meeting.second_dog.name %></h3>
-                    <h6> <%= meeting.place.name %></h6>
-                    <h6> <%= l(meeting.date, format: "%d/%m/%Y") %></h6>
+                    <h2><%= meeting.second_dog.name %></h2>
+                    <p><%= meeting.place.name %></p>
+                    <p>Le <%= l(meeting.date, format: "%a %e %b") %></p>
                 </div>
             </div>
             <% end %>
@@ -49,14 +49,14 @@
             <% @past_meetings.each do |meeting| %>
             <div class='card-meeting'>
                 <% if meeting.dog == current_user.dog%>
-                    <%= cl_image_tag meeting.second_dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
+                    <%= cl_image_tag meeting.second_dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "meeting-dog-image"%>
                 <% else %>
-                    <%= cl_image_tag meeting.dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "dog-image"%>
+                    <%= cl_image_tag meeting.dog.photos.first.key, width: 100, height: 100, crop: :fill, class: "meeting-dog-image"%>
                 <% end %>
                 <div class='card-infos'>
-                    <h3><%= meeting.second_dog.name %></h3>
-                    <h6> <%= meeting.place.name %></h6>
-                    <h6> <%= l(meeting.date, format: "%d/%m/%Y") %></h6>
+                    <h2><%= meeting.second_dog.name %></h2>
+                    <p> <%= meeting.place.name %></p>
+                    <p>Le <%= l(meeting.date, format: "%a %e %b") %></p>
                 </div>
             </div>
             <% end %>

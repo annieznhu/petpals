@@ -15,9 +15,11 @@ h1 {
   height: 120px;
   display: flex;
   align-items: center;
-  padding: 10px;
-  margin: 30px 40px 20px 30px;
+  margin: 20px 40px;
   justify-content: space-between;
+  background-color: #F3F1FF;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
 
   .dog-image {
     height: 100px;
@@ -27,13 +29,12 @@ h1 {
   }
   .heart {
     height: 60px;
-    width: 60px;
-
+    width: 90px;
   }
 }
 
 .title-index {
-  padding-top: 60px;
+  padding-top: 45px;
   padding-bottom: 0px;
   font-family:$body-font;
   text-align: left;
