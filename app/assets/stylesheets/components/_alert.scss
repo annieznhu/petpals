@@ -2,6 +2,7 @@
   position: fixed;
   bottom: 80px;
   z-index: 9000;
+  overflow: hidden;
 
   .confetti {
     width: 15px;
@@ -9,7 +10,7 @@
     background-color: #f2d74e;
     position: absolute;
     left: 50%;
-    animation: confetti 5s ease-in-out -2s infinite;
+    animation: confetti 4s linear -2s infinite;
     transform-origin: left top;
   }
   .confetti:nth-child(1) {
@@ -44,11 +45,11 @@
   }
 
   @keyframes confetti {
-    0% { transform: rotateZ(15deg) rotateY(0deg) translate(0,0); }
+    0% { transform: rotateZ(15deg) rotateY(0deg) translate(0,0); opacity: 1; }
     25% { transform: rotateZ(5deg) rotateY(360deg) translate(-5vw,20vh); }
     50% { transform: rotateZ(15deg) rotateY(720deg) translate(5vw,60vh); }
     75% { transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw,80vh); }
-    100% { transform: rotateZ(15deg) rotateY(1440deg) translate(10vw,110vh); }
+    100% { transform: rotateZ(15deg) rotateY(1440deg) translate(10vw,110vh); opacity: 0;}
   }
 }
 
