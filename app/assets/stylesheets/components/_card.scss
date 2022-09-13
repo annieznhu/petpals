@@ -11,18 +11,16 @@
 
   .translate {
     transform: translate(0 100px);
-    transition-duration: 1s;
   }
 
   .translate-back {
-    transition-duration: 1s;
     transform: translate(0 -100px);
   }
 }
 
-#pin {
-  height: 17px;
-  width: 17px;
+.pin {
+  height: 10px;
+  width: 10px;
 }
 
 .index-cards-dogs {
