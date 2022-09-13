@@ -46,7 +46,7 @@
               <h2><strong><%= dog.name %></strong></h2>
             </div>
             <div>
-              <h5><%#= image_tag "pin.svg", class: "pin" %>
+              <h5><%= image_tag "pin.svg", id: "pin" %>
                 à <%= Geocoder::Calculations.distance_between([current_user.dog.latitude, current_user.dog.longitude], [dog.latitude, dog.longitude]).round(1) %>
                 km d'ici</h5>
             </div>
