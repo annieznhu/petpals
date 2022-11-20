@@ -1,0 +1,20 @@
+<p><strong>All reviews about this awesome park</strong></p>
+<div>
+  <% if @place.reviews.blank? %>
+    Be the first to leave a review for <%= @place.name %>
+  <% else %>
+    <% @place.reviews.each do |review| %>
+      <p><%= review.content %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "retour", places_path %>
+<br>
+<li class="list-group-item">
+  <%= review.content %>
+  <%= link_to "Delete",
+    review_path(review),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</li>

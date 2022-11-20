@@ -1,5 +1,4 @@
 class MeetingsController < ApplicationController
-
   def new
   end
 
@@ -22,7 +21,6 @@ class MeetingsController < ApplicationController
     @today_meetings = current_user.dog.meetings.send(:today)
     @future_meetings = current_user.dog.meetings.send(:future)
   end
-
 
   private
 

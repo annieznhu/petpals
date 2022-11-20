@@ -9,7 +9,6 @@ class LikesController < ApplicationController
       Match.create(dog: @dog, second_dog: current_user.dog)
 
       flash[:match] = true
-    
       if params[:source] == "listings"
         redirect_to dogs_path
       else

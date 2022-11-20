@@ -22,6 +22,10 @@ class PlacesController < ApplicationController
     end
   end
 
+  def show
+  end
+
+
   private
 
   def place_params
