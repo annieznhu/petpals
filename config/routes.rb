@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   resources :places, only: %i[index new create show] do
     resources :walks, only: %i[create]
-    resources :reviews, only: %i[new create]
+    resources :reviews, only: %i[new create index show]
   end
   resources :reviews, only: [:destroy]
   get 'home', to: 'pages#home'

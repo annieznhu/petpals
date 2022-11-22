@@ -1,0 +1,24 @@
+<h1><strong>Tous les avis du <%= @place.name %></strong></h1>
+
+<h2><%= pluralize @place.reviews.size, "review" %></h2>
+<div>
+  <% if @place.reviews.blank? %>
+    Soyez la première personne à laisser un avis sur <%= @place.name %>
+  <% else %>
+    <% @place.reviews.each do |review| %>
+    <p><%= review.user.username %></p>
+      <p><%= review.content %></p>
+      <p><%= review.rating %></p>
+    <% end %>
+  <% end %>
+</div>
+<%= link_to "Ajouter un avis", new_place_review_path(@place), class: "button btn-primary"%>
+<%= link_to "retour", places_path, class: "button btn-home"%>
+<br>
+<div>
+  <%= @review.content %>
+  <%= link_to "Delete",
+    places_path,
+    data: {turbo_method: :delete, turbo_confirm: "Vous êtes sure?"}
+  %>
+</div>

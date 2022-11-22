@@ -13,7 +13,8 @@ class MessagesController < ApplicationController
         }
       )
 
-       head :ok
+      head :ok
+
     else
     end
   end
