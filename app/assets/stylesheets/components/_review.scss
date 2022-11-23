@@ -5,6 +5,7 @@ h1 {
 }
 
 h2 {
+  font-family:$title-font;
   font-size: 20px;
   margin: 10px;
 }
@@ -49,5 +50,6 @@ h2 {
     margin: 5px 10px;
     background-color: #F3F1FF;
     border-radius: 20px;
+    padding: 5px;
   }
 }

@@ -30,7 +30,23 @@
     object-fit: cover;
   }
   .window-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 15px;
+
+    .button-read-review {
+      background-color: #AA9DE7;
+      border-radius: 20px;
+      border-color: #AA9DE7;
+      color: white;
+      display: flex;
+      text-decoration: none;
+      width: 125px;
+      padding: 5px;
+      justify-content: center;
+      margin-top: 10px;
+    }
   }
 
 }

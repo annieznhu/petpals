@@ -5,6 +5,7 @@
   <div class="window-info">
     <h2><%= place.name %></h2>
     <p><%= place.address %></p>
-    <%= link_to "Voir tous les avis", place_reviews_path(place), class: "button btn-primary" %>
+    <%#= (tried here to add a average rating in the info window but failed) @place.reviews.sum(:rating) / @place.reviews.size%> </h3>
+    <%= link_to "Voir les avis", place_reviews_path(place), class:"button-read-review" %>
   </div>
 </div>

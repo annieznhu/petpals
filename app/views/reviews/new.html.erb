@@ -1,7 +1,9 @@
 <h1>Ajouter un avis</h1>
-<%= simple_form_for [@place, @review] do |f| %>
-  <%= f.input :content, label: "Votre commantaire" %>
-  <%= f.input :rating, label: "Note" %>
-   <%= link_to "Annuler", place_reviews_path(@place), class: "btn btn-secondary" %>
-  <%= f.submit "Ajouter", class: "btn btn-primary" %>
-<% end %>
+<div class='review-form'>
+  <%= simple_form_for [@place, @review] do |f| %>
+    <%= f.input :content, label: "Votre commantaire" %>
+    <%= f.input :rating, label: "Note" %>
+    <%= link_to "Annuler", place_reviews_path(@place), class: "btn btn-secondary" %>
+    <%= f.submit "Ajouter", class: "btn btn-primary" %>
+  <% end %>
+</div>
