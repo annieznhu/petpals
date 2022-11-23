@@ -5,8 +5,6 @@
   <div class="window-info">
     <h2><%= place.name %></h2>
     <p><%= place.address %></p>
-  </div>
-    <div class="button-avis">
-      <%= link_to "Voir tous les avis", place_reviews_path(place), class: "button btn-primary" %>
+    <%= link_to "Voir tous les avis", place_reviews_path(place), class: "button btn-primary" %>
   </div>
 </div>

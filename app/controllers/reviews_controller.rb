@@ -19,10 +19,10 @@ class ReviewsController < ApplicationController
     @review.user = current_user
 
     if @review.save
-      render json: success_response
-      redirect_to places_path(@place)
+      flash.alert = "Votre avis est bien enregistré"
+      redirect_to place_reviews_path(@place)
     else
-      render json: failure_response
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -42,6 +42,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:content, :rating)
+    params.require(:review).permit(:content, :rating, :photo)
   end
 end

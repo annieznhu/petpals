@@ -1,0 +1,53 @@
+h1 {
+  font-family: $title-font;
+  text-align: center;
+  color: $pink;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.button-add-return {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+
+  .button-add {
+    background-color: #AA9DE7;
+    border-radius: 8px;
+    border-color: #AA9DE7;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    width: 160px;
+    padding: 3px;
+
+  }
+  .button-return {
+    color: $pink;
+  }
+}
+.review {
+    display: flex;
+    flex-direction: column;
+  .author {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-review {
+    display: flex;
+    flex-direction: row;
+    border: none;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin: 5px 10px;
+    background-color: #F3F1FF;
+    border-radius: 20px;
+  }
+}
