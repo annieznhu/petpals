@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
 
     if @review.save
-      flash.alert = "Votre avis est bien enregistré"
+      flash.alert = "Votre avis est enregistré"
       redirect_to place_reviews_path(@place)
     else
       render :new, status: :unprocessable_entity
