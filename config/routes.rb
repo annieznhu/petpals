@@ -14,13 +14,13 @@ Rails.application.routes.draw do
 
   resources :matches, only: %i[index show] do
     resources :messages, only: %i[create]
-    resources :meetings, only: %i[new create]
+    resources :meetings, only: %i[new create destroy]
   end
 
   resources :meetings, only: %i[index]
 
   resources :places, only: %i[index new create show] do
-    resources :walks, only: %i[create]
+    resources :walks, only: %i[create destroy]
     resources :reviews, only: %i[new create index show]
   end
   resources :reviews, only: [:destroy]

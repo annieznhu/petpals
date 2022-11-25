@@ -11,13 +11,9 @@
   <div class="review">
         <% if @place.reviews.blank? %>
           Soyez la première personne à laisser un avis sur <%= @place.name %>.
-        <% else %>
-
-
-
+          <% else %>
           <% @place.reviews.each do |review| %>
           <div class='card-review'>
-
             <div class="review-info">
               <p class="author"><%= cl_image_tag review.user.dog.photos.first.key, width: 50, height: 50, crop: :fill , class: "avatar"%>
               <strong class="author"><%= review.user.username %></strong>
@@ -34,9 +30,6 @@
   </div>
 </div>
 
-<%#= maybe add the feature delete later %>
-  <%#= @review.content %>
-  <%#= link_to "Delete",
-    places_path,
-    data: {turbo_method: :delete, turbo_confirm: "Vous êtes sure?"}
-  %>
+          <%# if @review.user == current_user.reviews %>
+          <%#= link_to 'Supprimer', review_path(review), class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Vous êtes sure?"} %>
+          <%# end %>

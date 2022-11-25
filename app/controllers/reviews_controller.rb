@@ -34,6 +34,8 @@ class ReviewsController < ApplicationController
     @review.destroy
     redirect_to places_path(@review.place), status: :see_other
   end
+  # place_reviews_path(place),
+
 
   private
 
