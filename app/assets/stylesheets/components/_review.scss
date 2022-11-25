@@ -32,11 +32,16 @@ h2 {
     color: $pink;
   }
 }
+.review-page {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  height: 100%;
+  margin-bottom: 90px;
+}
 .review {
     display: flex;
     flex-direction: column;
-    overflow: scroll;
-    height: 73vh;
   .author {
     display: flex;
     flex-direction: column;

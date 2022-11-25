@@ -1,35 +1,37 @@
-<h1><strong>Tous les avis du <%= @place.name %></strong></h1>
+<div class='review-page'>
+  <h1><strong>Tous les avis du <%= @place.name %></strong></h1>
 
-  <div class="button-add-return">
-    <%= link_to "retour", places_path, class: "button-return btn-primary"%>
-    <%= link_to "Ajouter un avis", new_place_review_path(@place), class: "button-add btn-primary"%>
-  </div>
-
-<div class="review">
-  <h2><strong>Une note moyenne de <%= @place.reviews.sum(:rating) / @place.reviews.size%> sur 5 </strong>(<%= pluralize @place.reviews.size, "avis" %>).</h2>
-
-      <% if @place.reviews.blank? %>
-        Soyez la première personne à laisser un avis sur <%= @place.name %>.
-      <% else %>
+    <div class="button-add-return">
+      <%= link_to "retour", places_path, class: "button-return btn-primary"%>
+      <%= link_to "Ajouter un avis", new_place_review_path(@place), class: "button-add btn-primary"%>
+    </div>
 
 
+    <h2><strong>Une note moyenne de <%= @place.reviews.sum(:rating) / @place.reviews.size%> sur 5 </strong>(<%= pluralize @place.reviews.size, "avis" %>).</h2>
+  <div class="review">
+        <% if @place.reviews.blank? %>
+          Soyez la première personne à laisser un avis sur <%= @place.name %>.
+        <% else %>
 
-        <% @place.reviews.each do |review| %>
-        <div class='card-review'>
 
-          <div class="review-info">
-            <p class="author"><%= cl_image_tag review.user.dog.photos.first.key, width: 50, height: 50, crop: :fill , class: "avatar"%>
-            <strong class="author"><%= review.user.username %></strong>
-            <%=l(review.created_at, format: "%a %e %b à %l:%M")%>
+
+          <% @place.reviews.each do |review| %>
+          <div class='card-review'>
+
+            <div class="review-info">
+              <p class="author"><%= cl_image_tag review.user.dog.photos.first.key, width: 50, height: 50, crop: :fill , class: "avatar"%>
+              <strong class="author"><%= review.user.username %></strong>
+              <%=l(review.created_at, format: "%a %e %b à %l:%M")%>
+              </p>
+            </div>
+            <%= review.content %>
+            <br>
+            Je donne une note de <%= review.rating %> sur 5 à ce parc.
             </p>
           </div>
-           <%= review.content %>
-           <br>
-           Je donne une note de <%= review.rating %> sur 5 à ce parc.
-           </p>
-        </div>
+          <% end %>
         <% end %>
-      <% end %>
+  </div>
 </div>
 
 <%#= maybe add the feature delete later %>
