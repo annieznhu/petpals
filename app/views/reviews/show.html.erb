@@ -1,0 +1,16 @@
+<div class='all-my-reviews'>
+  <h1>Tous mes avis</h1>
+  <div>
+    <% current_user.reviews.each do |review| %>
+      <div class='card-avis'>
+      <br>
+      Mon commentaire :
+        <p><%=review.place.name%></p>
+        <%= review.content %>
+        Je donne une note de <%= review.rating %> sur 5 à ce parc.
+      <%=link_to 'supprimer', delete_review_path(@reviews), data: {turbo_method: :delete, turbo_confirm: "Vous êtes sure?"}%>
+      </div>
+      <br>
+    <% end %>
+  </div>
+</div>

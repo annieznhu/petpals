@@ -7,11 +7,13 @@
     </div>
 
 
-    <h2><strong>Une note moyenne de <%= @place.reviews.sum(:rating) / @place.reviews.size%> sur 5 </strong>(<%= pluralize @place.reviews.size, "avis" %>).</h2>
+
   <div class="review">
         <% if @place.reviews.blank? %>
           Soyez la première personne à laisser un avis sur <%= @place.name %>.
-          <% else %>
+        <% else %>
+
+    <h2><strong>Une note moyenne de <%= @place.reviews.sum(:rating) / @place.reviews.size%> sur 5 </strong>(<%= pluralize @place.reviews.size, "avis" %>).</h2>
           <% @place.reviews.each do |review| %>
           <div class='card-review'>
             <div class="review-info">
@@ -24,12 +26,9 @@
             <br>
             Je donne une note de <%= review.rating %> sur 5 à ce parc.
             </p>
+
           </div>
           <% end %>
         <% end %>
   </div>
 </div>
-
-          <%# if @review.user == current_user.reviews %>
-          <%#= link_to 'Supprimer', review_path(review), class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Vous êtes sure?"} %>
-          <%# end %>

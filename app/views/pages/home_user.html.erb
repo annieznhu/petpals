@@ -4,11 +4,13 @@
   </div>
   <h1>Bonjour <%= current_user.first_name %>  👋</h1>
 </div>
-<h2>Les derniers profils likés</h2>
 
+<h2>Les derniers profils likés</h2>
 <div class="likes-cards">
   <% @likes.each do |like| %>
     <%=cl_image_tag like.dog.photos.first.key%>
-    <span><strong><%= like.dog.name %></strong><span>
+    <strong><%= like.dog.name %></strong>
   <% end %>
 </div>
+
+<%=link_to 'Voir tous mes avis', all_my_review_path(@reviews)%>

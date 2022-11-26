@@ -15,7 +15,7 @@
     <%= image_tag('guide-dog.svg', class:"guide-dog-item") %>
     <p>Planning</p>
   <% end %>
-  <%= link_to user_session_path, class: "navbar-item" do %>
+  <%= link_to home_user_path, class: "navbar-item" do %>
     <%= cl_image_tag current_user.dog.photos.first.key, height: 40, crop: :fill , class: "avatar"%>
     <p>Profil</p>
   <% end %>

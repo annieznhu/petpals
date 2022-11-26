@@ -22,17 +22,17 @@ class MeetingsController < ApplicationController
     @future_meetings = current_user.dog.meetings.send(:future)
   end
 
-  # def update
-  #   if @meeting.update(meeting_params)
-  #     redirect_to meetings_path(@meeting)
-  #   else
-  #     render :edit, status: :unprocessable_entity
-  #   end
-  # end
+  def update
+    if @meeting.update(meeting_params)
+      redirect_to meetings_path(@meeting)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
 
   def destroy
     @meeting.destroy
-    redirect_to meetings_path, status: :see_other
+    redirect_to bookings_path, status: :see_other
   end
 
   private
