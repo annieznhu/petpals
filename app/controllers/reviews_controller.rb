@@ -31,7 +31,7 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @reviews.destroy
+    @review.destroy
     flash.alert = "Votre avis est supprimé"
     redirect_to all_my_review_path(@reviews)
   end

@@ -1,30 +1,34 @@
 .likes-cards {
   padding: 0 24px 0 24px;
+  margin-bottom: 15px;
 
   img {
   aspect-ratio: 1 / 1;
-  border-radius: 15px;
+  border-radius: 44px;
   object-fit: cover;
-  width: 50%;
+  width: 44%;
   }
-
 }
 
 .header-home-user {
   display: flex;
-  align-items: center;
-  margin-bottom: 30px;
+  flex-direction: column;
+  overflow: scroll;
+  height: 100%;
+  padding: 10px;
+  margin-bottom: 90px;
 }
 
 .mask {
-  display: inline-block;
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 15px;
-
-  img {
-    max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .avatar {
+    align-self: flex-end;
+    object-fit: cover;
+    width: 75px;
+    height: 75px;
+    margin: 5px 5px 5px 0;
+    border-radius: 50%;
   }
 }

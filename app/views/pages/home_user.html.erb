@@ -1,16 +1,21 @@
 <div class="header-home-user">
-  <div class="mask">
-    <%= cl_image_tag current_user.photo.key, crop: :fill, class: 'avatar-user' %>
+
+  <div class="mask nav-item dropdown">
+    <h1>Bonjour <%= current_user.first_name %> !</h1>
+    <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+      <%= link_to "mon chien", href='#', class: "dropdown-item" %>
+      <%= link_to "Mes avis", all_my_review_path(@reviews), class: "dropdown-item" %>
+      <%= link_to "Se déconnecter",  destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+    </div>
+
   </div>
-  <h1>Bonjour <%= current_user.first_name %>  👋</h1>
-</div>
+    <h2>Les derniers profils likés</h2>
+    <% @likes.each do |like| %>
+      <div class="likes-cards">
+          <%=cl_image_tag like.dog.photos.first.key%>
+          <span><strong><%= like.dog.name %></strong></span>
+      </div>
+    <% end %>
 
-<h2>Les derniers profils likés</h2>
-<div class="likes-cards">
-  <% @likes.each do |like| %>
-    <%=cl_image_tag like.dog.photos.first.key%>
-    <strong><%= like.dog.name %></strong>
-  <% end %>
 </div>
-
-<%=link_to 'Voir tous mes avis', all_my_review_path(@reviews)%>

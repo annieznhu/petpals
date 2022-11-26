@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def home_user
-    @likes = Like.where(dog: current_user.dog).last(4)
+    @likes = Like.where.not(dog: current_user.dog).last(4)
     @meetings = Meeting.where(date: Date.today)
     @reviews = Review.all
   end
