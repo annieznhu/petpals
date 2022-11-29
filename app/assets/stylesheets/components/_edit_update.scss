@@ -1,8 +1,23 @@
-.edit-dog-form {
-  .form {
+.edit-dog {
     display: flex;
     flex-direction: column;
     margin: 15px;
     padding: 10px;
-  }
+    align-items: center;
+    label {
+      color: $purple;
+    }
+    input {
+      border: 1px solid #FF725E !important;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    textarea{
+      border: 1px solid #FF725E !important;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    p {
+      margin: 5px;
+      padding: 5px;
+    }
+
 }

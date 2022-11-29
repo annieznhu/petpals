@@ -11,13 +11,13 @@
   <br>
   <%= link_to "Se déconnecter",  destroy_user_session_path, class: "log-out", data: {turbo_method: :delete} %>
       <div class="profil-card">
-        <h2>Le profil de  <%= current_user.dog.name %></h2>
-        <p>Mon âge : <%= current_user.dog.age %></p>
+        <h2>Le profil de <%= current_user.dog.name %></h2>
+        <p><strong>Mon âge :</strong> <%= current_user.dog.age %></p>
         <p>Je suis un <%= current_user.dog.species %></p>
-        <p>Mon caractère : <%= current_user.dog.temper %></p>
-        <p>Mon adresse : <%= current_user.dog.address %></p>
-        <p>Mon description : <%= current_user.dog.description %></p>
-        <p>Mes jouets préférés: <%= current_user.dog.toys %></p>
+        <p><strong>Mon caractère :</strong> <%= current_user.dog.temper %></p>
+        <p><strong>Mon adresse : </strong><%= current_user.dog.address %></p>
+        <p><strong>Mon description : </strong><%= current_user.dog.description %></p>
+        <p><strong>Mes jouets préférés: </strong><%= current_user.dog.toys %></p>
         <p class="edit-profil"><%= link_to "éditer profil", edit_dog_path(@dog)%></p>
       </div>
 
