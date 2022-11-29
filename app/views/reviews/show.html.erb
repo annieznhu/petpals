@@ -12,7 +12,7 @@
         <%= review.content %></p>
         <br>
         Je donne une note de <%= review.rating %> sur 5 à ce parc.
-        <%= link_to "Delete", delete_review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <%#= link_to "Delete", delete_review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       </div>
       <br>
     <% end %>
