@@ -1,21 +1,31 @@
 <div class="header-home-user">
 
   <div class="mask nav-item dropdown">
-    <h1>Bonjour <%= current_user.first_name %> !</h1>
+    <h1> Profil </h1>
+
     <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-      <%= link_to "mon chien", href='#', class: "dropdown-item" %>
       <%= link_to "Mes avis", all_my_review_path(@reviews), class: "dropdown-item" %>
-      <%= link_to "Se déconnecter",  destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
     </div>
-
   </div>
-    <h2>Les derniers profils likés</h2>
+  <br>
+  <%= link_to "Se déconnecter",  destroy_user_session_path, class: "log-out", data: {turbo_method: :delete} %>
+      <div class="profil-card">
+        <h2>Le profil de  <%= current_user.dog.name %></h2>
+        <p>Mon âge : <%= current_user.dog.age %></p>
+        <p>Je suis un <%= current_user.dog.species %></p>
+        <p>Mon caractère : <%= current_user.dog.temper %></p>
+        <p>Mon adresse : <%= current_user.dog.address %></p>
+        <p>Mon description : <%= current_user.dog.description %></p>
+        <p>Mes jouets préférés: <%= current_user.dog.toys %></p>
+        <p class="edit-profil"><%= link_to "éditer profil", edit_dog_path(@dog)%></p>
+      </div>
+
+    <h3>Les derniers profils likés</h3>
     <% @likes.each do |like| %>
       <div class="likes-cards">
           <%=cl_image_tag like.dog.photos.first.key%>
           <span><strong><%= like.dog.name %></strong></span>
       </div>
     <% end %>
-
 </div>

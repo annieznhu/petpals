@@ -8,5 +8,6 @@ class PagesController < ApplicationController
     @likes = Like.where.not(dog: current_user.dog).last(4)
     @meetings = Meeting.where(date: Date.today)
     @reviews = Review.all
+    @dog = Dog.find(current_user.dog.id)
   end
 end

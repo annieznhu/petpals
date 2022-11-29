@@ -1,0 +1,19 @@
+
+ <h1> Le profil de mon chien</h1>
+<div class="edit-dog-form">
+  <%= form_with model: @dog do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+      <%= f.label :age %>
+    <%= f.text_field :age %>
+    <%= f.label :temper %>
+    <%= f.text_field  :temper %>
+      <%= f.label :address %>
+    <%= f.text_field :address%>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+      <%= f.label :jouet %>
+    <%= f.text_field :toy %>
+    <%= f.submit %>
+  <% end %>
+</div>

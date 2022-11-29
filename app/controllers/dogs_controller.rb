@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: %i[show]
+  before_action :set_dog, only: %i[show update]
 
   def index
     @dogs = Dog.where.not(user: current_user)
@@ -14,6 +14,21 @@ class DogsController < ApplicationController
     dog_index = dogs.index(@dog)
     @previous_dog = dogs[dog_index - 1]
     @next_dog = dogs[dog_index + 1] || dogs.first
+  end
+
+  def edit
+    @dog = Dog.find(current_user.dog.id)
+  end
+
+  def update
+    if @dog.update(dog_params)
+      @dog.save
+      flash[:success] = "To-do item successfully updated!"
+      redirect_to home_user_path(@dog)
+    else
+      flash.now[:error] = "To-do item update failed"
+      render :edit
+    end
   end
 
   private

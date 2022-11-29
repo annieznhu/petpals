@@ -31,6 +31,7 @@ class MeetingsController < ApplicationController
   end
 
   def destroy
+    @meeting = Meeting.find(params[:id])
     @meeting.destroy
     redirect_to bookings_path, status: :see_other
   end

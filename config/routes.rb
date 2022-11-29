@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :walks, only: %i[create destroy]
     resources :reviews, only: %i[new create index]
   end
-  resources :reviews, only: %i[destroy], as: :delete_review
+  delete "reviews/:id", to: "reviews#destroy", as: :delete_review
   get 'all_my_review', to: 'reviews#show'
   get 'home_user', to: "pages#home_user"
   get 'home', to: 'pages#home'

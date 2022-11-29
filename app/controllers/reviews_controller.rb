@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_place, only: %i[new index create destroy]
+  before_action :set_place, only: %i[new index create]
   def new
     # We need @place in our `simple_form_for`
     @review = Review.new
@@ -31,6 +31,7 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = Review.find(params[:review_id])
     @review.destroy
     flash.alert = "Votre avis est supprimé"
     redirect_to all_my_review_path(@reviews)
