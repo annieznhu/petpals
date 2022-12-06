@@ -1,14 +1,13 @@
 <div class="header-home-user">
 
-  <div class="mask nav-item dropdown">
-    <h1> Profil </h1>
+  <div class="mask ">
+    <h1> Bonjour <%= current_user.first_name %> </h1>
 
-    <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-      <%= link_to "Mes avis", all_my_review_path(@reviews), class: "dropdown-item" %>
-    </div>
+    <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar"%>
+
   </div>
   <br>
+  <%= link_to "Voir tous mes avis", all_my_review_path(@reviews)%>
   <%= link_to "Se déconnecter",  destroy_user_session_path, class: "log-out", data: {turbo_method: :delete} %>
       <div class="profil-card">
         <h2>Le profil de <%= current_user.dog.name %></h2>

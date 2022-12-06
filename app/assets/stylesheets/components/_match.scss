@@ -57,7 +57,7 @@
 
   }
 
-  .icon {
+  button.icon-plane {
     border: none;
     background: none;
     color: $pink;
@@ -67,9 +67,9 @@
     align-items: left;
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    position: absolute;
     right: 34px;
     bottom: 104px;
+    position: fixed;
   }
 }
 .padding-input {

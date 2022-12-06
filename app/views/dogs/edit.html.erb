@@ -1,5 +1,9 @@
-<div class="edit-dog">
+
  <h1> Le profil de mon chien</h1>
+
+
+ <div class="edit-dog">
+  <%= link_to "Retour", home_user_path, class: "button-return btn-primary"%>
   <%= form_with model: @dog do |f| %>
     <p><%= f.label :name %> : <%= f.text_field :name %></p>
 
